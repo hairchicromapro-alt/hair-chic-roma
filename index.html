@@ -3,629 +3,689 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#151411">
 <title>Hair Chic Roma | Il tuo stile, la nostra firma</title>
-<meta name="description" content="Scopri Hair Chic a Roma, in Via Emanuele Filiberto 24. Esplora i servizi e prenota il tuo appuntamento online.">
-<meta property="og:title" content="Hair Chic Roma | Il tuo stile, la nostra firma">
-<meta property="og:description" content="Scopri il mondo Hair Chic e prenota il tuo prossimo appuntamento a Roma.">
-<meta property="og:type" content="website">
-
+<meta name="description" content="Scopri Hair Chic a Roma. Esplora i servizi e invia una richiesta di appuntamento direttamente dal sito.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --black:#151411;
-  --dark:#201e19;
-  --ivory:#f7f4ee;
-  --cream:#eae3d7;
-  --gold:#c8a96a;
-  --gold-light:#dfc997;
-  --white:#fff;
-  --muted:#77736c;
-  --line:rgba(200,169,106,.3);
+:root{
+  --black:#151411;--dark:#211f1a;--ivory:#f7f4ee;
+  --cream:#eae2d5;--gold:#c8a96a;--lightgold:#e2cb98;
+  --muted:#777168;--line:#ded3c0;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Inter',Arial,sans-serif;
-  --header-height:82px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:100px}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
 body{font-family:var(--sans);background:var(--ivory);color:var(--black);line-height:1.7}
-body.menu-open{overflow:hidden}
+body.locked{overflow:hidden}
 a{color:inherit;text-decoration:none}
-button{font:inherit}
-img{display:block;max-width:100%}
+button,input,select,textarea{font:inherit}
 button,a{-webkit-tap-highlight-color:transparent}
-.container{width:min(1180px,90%);margin-inline:auto}
-.eyebrow{display:block;color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:600}
+img{display:block;max-width:100%}
+.container{width:min(1160px,90%);margin:auto}
 h1,h2,h3,.brand,.footer-brand{font-family:var(--serif);font-weight:500}
-h2{font-size:clamp(42px,5.5vw,68px);line-height:1.02;letter-spacing:-1px}
-p{overflow-wrap:break-word}
+h2{font-size:clamp(42px,6vw,70px);line-height:1.02;letter-spacing:-1px}
+.eyebrow{display:block;color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:10px;font-weight:700}
+.muted{color:var(--muted)}
 :focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 
-/* HEADER */
-header{height:var(--header-height);position:fixed;inset:0 0 auto;z-index:1000;background:rgba(21,20,17,.96);border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(14px)}
-.navbar{height:100%;display:flex;align-items:center;justify-content:space-between;gap:25px}
-.brand{font-size:34px;line-height:1;color:white;letter-spacing:.4px;white-space:nowrap}
+/* NAVIGAZIONE */
+header{height:76px;position:fixed;z-index:1000;inset:0 0 auto;background:rgba(21,20,17,.96);backdrop-filter:blur(14px);border-bottom:1px solid #39352b}
+.navbar{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-size:35px;color:white;line-height:1;white-space:nowrap}
 .brand span,.footer-brand span{color:var(--gold)}
-.nav-links{display:flex;align-items:center;gap:25px;list-style:none}
-.nav-links a:not(.nav-cta){font-size:12px;color:#e5e1d8;transition:color .25s}
-.nav-links a:not(.nav-cta):hover{color:var(--gold-light)}
-.nav-cta{display:inline-flex;justify-content:center;align-items:center;gap:10px;padding:13px 18px;background:var(--gold);color:var(--black);font-size:11px;font-weight:700;letter-spacing:1px;transition:background .25s,transform .25s}
-.nav-cta:hover{background:var(--gold-light);transform:translateY(-2px)}
-.menu-toggle{display:none;width:44px;height:44px;border:1px solid #514b3e;background:transparent;color:white;font-size:24px;cursor:pointer}
+.nav-links{list-style:none;display:flex;align-items:center;gap:24px}
+.nav-links a:not(.nav-cta){font-size:11px;color:#e8e2d7;transition:color .2s}
+.nav-links a:hover{color:var(--lightgold)}
+.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:1px solid var(--gold);font-size:10px;font-weight:700;letter-spacing:1px;transition:.25s}
+.nav-cta{padding:13px 17px;background:var(--gold);color:var(--black)}
+.btn{min-height:53px;padding:15px 23px}
+.btn-gold{background:var(--gold);color:var(--black)}
+.btn-outline{color:white;background:transparent}
+.btn-dark{background:var(--black);border-color:var(--black);color:white}
+.btn:hover,.nav-cta:hover{transform:translateY(-2px);background:var(--lightgold);color:var(--black);border-color:var(--lightgold)}
+.menu-toggle{display:none;background:none;color:white;border:1px solid #635942;width:43px;height:43px;font-size:23px}
 
 /* HERO */
-.hero{position:relative;min-height:760px;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:145px 20px 110px;text-align:center;color:white;background:#171511;isolation:isolate;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:url("https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=2200&q=85") center 48%/cover no-repeat;animation:heroReveal 1.3s ease both}
-.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(12,11,9,.77),rgba(12,11,9,.34) 50%,rgba(12,11,9,.62)),linear-gradient(0deg,rgba(12,11,9,.58),transparent 55%)}
-.hero-content{max-width:880px}
-.hero .eyebrow{margin-bottom:26px;letter-spacing:5px}
-.hero h1{font-size:clamp(64px,10vw,116px);line-height:.88;letter-spacing:-2px;margin-bottom:28px}
-.hero h1 em{font-weight:400;color:var(--gold-light)}
-.hero p{max-width:600px;margin:auto;color:#e8e4dd;font-size:16px;font-weight:300;line-height:1.9}
-.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:13px;margin-top:36px}
-.btn{min-height:54px;padding:15px 24px;display:inline-flex;align-items:center;justify-content:center;gap:12px;border:1px solid var(--gold);font-size:11px;letter-spacing:1px;font-weight:700;text-align:center;transition:transform .25s,background .25s,color .25s,border-color .25s}
-.btn:hover{transform:translateY(-3px)}
-.btn-gold{background:var(--gold);color:var(--black)}
-.btn-gold:hover{background:var(--gold-light);border-color:var(--gold-light)}
-.btn-outline{background:rgba(20,19,16,.22);color:white}
-.btn-outline:hover{background:white;border-color:white;color:var(--black)}
-.hero-note{margin-top:45px!important;font-size:10px!important;letter-spacing:3px;text-transform:uppercase;color:#d2c9b7!important}
+.hero{min-height:760px;min-height:100svh;padding:145px 20px 100px;display:grid;place-items:center;text-align:center;color:white;position:relative;isolation:isolate;overflow:hidden;background:#171511}
+.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:url("https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=2200&q=85") center/cover;animation:heroIn 1.2s ease both}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(12,11,9,.78),rgba(12,11,9,.35),rgba(12,11,9,.7)),linear-gradient(0deg,rgba(12,11,9,.6),transparent 65%)}
+.hero-content{max-width:850px}
+.hero .eyebrow{letter-spacing:5px;margin-bottom:25px}
+.hero h1{font-size:clamp(64px,10vw,115px);line-height:.88;letter-spacing:-2px;margin-bottom:27px}
+.hero h1 em,.about-copy h2 em,.contact-copy h2 em{color:var(--lightgold);font-weight:400}
+.hero p{max-width:610px;margin:auto;color:#e8e2d8;font-size:15px;font-weight:300}
+.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero-note{margin-top:38px!important;font-size:10px!important;letter-spacing:3px;text-transform:uppercase}
 
-/* STRIP */
-.intro-strip{background:var(--black);color:#eae2d3;border-block:1px solid var(--line)}
-.strip-inner{min-height:84px;display:flex;justify-content:center;align-items:center;gap:clamp(20px,5vw,65px);flex-wrap:wrap;padding:20px 0}
-.strip-item{font-family:var(--serif);font-size:21px;display:flex;align-items:center;gap:13px}
-.strip-dot{width:5px;height:5px;background:var(--gold);border-radius:50%}
+/* FASCIA */
+.intro-strip{background:var(--black);color:#eee5d7;border-block:1px solid #4b402c}
+.strip-inner{min-height:82px;display:flex;align-items:center;justify-content:center;gap:clamp(20px,5vw,65px);flex-wrap:wrap;padding:18px 0}
+.strip-item{font-family:var(--serif);font-size:21px;display:flex;align-items:center;gap:12px}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
 
-/* SECTIONS */
-section.section{padding:110px 0}
-.section-heading{text-align:center;max-width:760px;margin:0 auto 56px}
+/* SEZIONI */
+section.section{padding:100px 0}
+.section-heading{text-align:center;max-width:760px;margin:0 auto 50px}
 .section-heading .eyebrow{margin-bottom:14px}
-.section-heading p{max-width:610px;margin:19px auto 0;color:var(--muted);font-size:14px}
-.section-heading h2 span{color:#aa8950;font-style:italic}
-
-/* TWO PREMIUM SERVICE CARDS */
-.services{background:linear-gradient(180deg,#f7f4ee 0%,#eee7db 100%)}
-.services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;max-width:960px;margin:0 auto}
-.service-card{position:relative;overflow:hidden;background:#fffdf9;border:1px solid #ded2bd;box-shadow:0 12px 35px rgba(44,35,20,.06);transition:transform .35s,box-shadow .35s,border-color .35s;display:flex;flex-direction:column;min-width:0}
-.service-card:hover{transform:translateY(-8px);box-shadow:0 24px 55px rgba(44,35,20,.14);border-color:var(--gold)}
-.service-image{height:290px;position:relative;overflow:hidden;background:#d8cbbb}
-.service-image img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
-.service-card:hover .service-image img{transform:scale(1.06)}
-.service-image::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,18,14,.7),transparent 65%)}
-.service-number{position:absolute;top:18px;left:18px;z-index:1;width:43px;height:43px;display:grid;place-items:center;background:rgba(21,20,17,.8);border:1px solid var(--gold);border-radius:50%;color:var(--gold-light);font-family:var(--serif);font-size:20px}
-.service-image-label{position:absolute;bottom:19px;left:24px;z-index:1;color:white;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
-.service-content{padding:29px 30px 31px;display:flex;flex-direction:column;flex:1}
-.service-heading-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
-.service-card h3{font-size:clamp(32px,4vw,42px);line-height:1.05;color:#29251e}
-.service-symbol{width:43px;height:43px;flex-shrink:0;display:grid;place-items:center;border:1px solid #d9c49b;border-radius:50%;color:#a1844e;font-size:20px}
-.service-card p{font-size:13px;color:#706c64;line-height:1.9;min-height:50px}
-.service-details{display:flex;gap:9px;flex-wrap:wrap;margin:21px 0 24px}
-.service-detail{display:inline-flex;align-items:center;gap:7px;background:#f3eee4;border:1px solid #e6dccb;padding:8px 11px;color:#64563e;font-size:10px;letter-spacing:.4px}
-.service-detail span{color:#a1844e;font-size:13px}
-.service-book{width:100%;min-height:53px;margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 17px;background:var(--black);border:1px solid var(--black);color:white;font-size:10px;font-weight:700;letter-spacing:1.1px;transition:background .25s,border-color .25s,color .25s}
-.service-book span:last-child{color:var(--gold-light);font-size:18px;transition:transform .25s}
-.service-book:hover{background:var(--gold);border-color:var(--gold);color:var(--black)}
-.service-book:hover span:last-child{color:var(--black);transform:translateX(4px)}
-.service-footer{text-align:center;margin-top:35px}
-.service-footer p{font-size:13px;color:var(--muted);margin-bottom:17px}
-
-/* ABOUT */
-.about{background:var(--dark);color:white}
-.about-grid{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:clamp(40px,7vw,95px)}
-.about-visual{position:relative;min-height:620px}
-.about-image{position:absolute;inset:0 28px 28px 0;background:url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=85") center/cover no-repeat}
-.about-frame{position:absolute;inset:25px 0 0 25px;border:1px solid var(--gold);pointer-events:none}
-.about-caption{position:absolute;right:0;bottom:0;background:var(--gold);color:var(--black);padding:19px 23px;max-width:230px}
-.about-caption strong{display:block;font-family:var(--serif);font-size:26px;line-height:1.05;font-weight:500}
-.about-caption span{display:block;font-size:9px;letter-spacing:1.7px;text-transform:uppercase;margin-top:8px}
-.about-copy .eyebrow{margin-bottom:16px}
-.about-copy h2{font-size:clamp(48px,5.7vw,72px);margin-bottom:26px}
-.about-copy h2 em{color:var(--gold-light);font-weight:400}
-.about-copy p{color:#c8c4bb;font-size:14px;margin-bottom:18px}
-.about-rule{width:65px;height:1px;background:var(--gold);margin:28px 0}
-.about-copy .btn{margin-top:12px}
-
-/* GALLERY */
-.gallery{background:var(--cream)}
-.gallery-grid{display:grid;grid-template-columns:1.25fr .85fr .85fr;grid-template-rows:240px 240px;gap:13px}
-.gallery-item{position:relative;overflow:hidden;background:#d6cdbf;border:0;padding:0;cursor:zoom-in;text-align:left;min-width:0}
-.gallery-item:first-child{grid-row:span 2}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .65s,filter .65s}
-.gallery-item:hover img{transform:scale(1.06);filter:brightness(.86)}
-.gallery-item::after{content:"+";position:absolute;right:15px;bottom:15px;width:37px;height:37px;display:grid;place-items:center;background:rgba(20,19,16,.76);border:1px solid rgba(255,255,255,.5);color:white;font-size:23px;font-weight:300;opacity:0;transform:translateY(5px);transition:.3s}
-.gallery-item:hover::after,.gallery-item:focus-visible::after{opacity:1;transform:translateY(0)}
-.gallery-note{text-align:center;font-size:11px;color:#777064;margin-top:22px}
-
-/* LIGHTBOX */
-.lightbox{position:fixed;inset:0;z-index:2000;background:rgba(8,8,7,.94);display:none;align-items:center;justify-content:center;padding:65px 22px 25px}
-.lightbox.open{display:flex}
-.lightbox img{max-width:min(1100px,94vw);max-height:82vh;object-fit:contain}
-.lightbox-close{position:absolute;right:22px;top:16px;width:46px;height:46px;border:1px solid #aaa;background:transparent;color:white;font-size:28px;cursor:pointer}
-
-/* REVIEWS */
-.reviews{background:var(--ivory)}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.review-card{background:#fffdf9;border:1px solid #e7dfd2;padding:29px;display:flex;flex-direction:column;min-height:260px}
-.review-stars{color:#ad8a49;letter-spacing:3px;font-size:13px;margin-bottom:20px}
-.review-card blockquote{font-family:var(--serif);font-size:23px;line-height:1.35;color:#302d27}
-.review-author{margin-top:auto;padding-top:25px;font-size:10px;text-transform:uppercase;letter-spacing:1.3px;font-weight:700;color:#776d5d}
-.review-disclaimer{max-width:750px;margin:25px auto 0;text-align:center;font-size:11px;color:#817a6e}
-
-/* CONTACT AND FULL-COLOR MAP */
-.contact{background:var(--black);color:white}
-.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:stretch}
-.contact-copy .eyebrow{margin-bottom:16px}
-.contact-copy h2{font-size:clamp(49px,6vw,76px);margin-bottom:25px}
-.contact-copy h2 em{color:var(--gold-light);font-weight:400}
-.contact-intro{font-size:14px;color:#c4c0b7;margin-bottom:33px;max-width:420px}
-.contact-list{display:grid;gap:22px}
-.contact-item{display:grid;grid-template-columns:34px 1fr;gap:13px;align-items:start}
-.contact-icon{width:32px;height:32px;border:1px solid #5b5039;color:var(--gold);display:grid;place-items:center;font-size:14px}
-.contact-item strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:3px}
-.contact-item p,.contact-item a{font-size:13px;color:#e9e5dc}
-.contact-item a:hover{color:var(--gold-light)}
-.contact-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
-.map-wrap{min-height:480px;position:relative;overflow:hidden;border:1px solid #65583e;background:#e8e3d8;box-shadow:0 15px 45px rgba(0,0,0,.25)}
-.map-wrap iframe{display:block;width:100%;height:100%;min-height:480px;border:0;filter:none!important;}
-
-/* FINAL CTA */
-.final-cta{background:var(--gold);color:var(--black);padding:57px 0}
-.final-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
-.final-cta h2{font-size:clamp(35px,4.5vw,53px)}
-.final-cta p{font-size:13px;margin-top:7px;color:#3d3426}
-.final-cta .btn{border-color:var(--black);background:var(--black);color:white;white-space:nowrap}
-.final-cta .btn:hover{background:#302b20}
-
-/* FOOTER */
-footer{background:#0e0d0b;color:#a8a399;padding:52px 0 25px}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:35px;border-bottom:1px solid #302d27}
-.footer-brand{font-size:38px;color:white;line-height:1}
-.footer-description{max-width:360px;font-size:12px;margin-top:15px}
-footer h3{font-family:var(--sans);font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-bottom:17px}
-footer p,footer a{font-size:12px;line-height:2;color:#bcb7ac}
-footer a:hover{color:var(--gold-light)}
-.footer-bottom{padding-top:20px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:10px;color:#77736c}
-
-/* FLOATING BUTTONS */
-.floating-booking{position:fixed;left:18px;bottom:18px;z-index:900;display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--gold);color:var(--black);padding:15px 20px;font-size:10px;letter-spacing:1px;font-weight:700;box-shadow:0 6px 25px rgba(0,0,0,.25);transition:transform .2s,background .2s}
-.floating-booking:hover{transform:translateY(-3px);background:var(--gold-light)}
-.whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:900;width:54px;height:54px;display:grid;place-items:center;border-radius:50%;background:#25d366;color:white;font-size:23px;box-shadow:0 6px 25px rgba(0,0,0,.25);transition:transform .2s}
-.whatsapp-float:hover{transform:scale(1.07)}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.section-heading h2 span{font-style:italic;color:#a1834c}
+.section-heading p{max-width:610px;margin:18px auto 0;font-size:13px;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
 .reveal.visible{opacity:1;transform:translateY(0)}
-@keyframes heroReveal{from{transform:scale(1.045);opacity:.5}to{transform:scale(1);opacity:1}}
 
-/* RESPONSIVE */
+/* SERVIZI */
+.services{background:linear-gradient(180deg,#f7f4ee,#eee6d9)}
+.services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:27px;max-width:980px;margin:auto}
+.service-card{background:#fffdf8;border:1px solid #e1d5c2;box-shadow:0 12px 35px #3027190c;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.service-card:hover{transform:translateY(-7px);box-shadow:0 22px 50px #30271920}
+.service-image{height:290px;position:relative;overflow:hidden;background:#d9cebd}
+.service-image img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.service-card:hover .service-image img{transform:scale(1.05)}
+.service-image:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#151411a8,transparent 65%)}
+.service-number{position:absolute;z-index:1;top:17px;left:17px;width:43px;height:43px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;background:#151411c9;color:var(--lightgold);font-family:var(--serif);font-size:20px}
+.service-image-label{position:absolute;z-index:1;bottom:18px;left:23px;color:white;font-size:9px;letter-spacing:2px;text-transform:uppercase}
+.service-content{padding:28px;display:flex;flex-direction:column;flex:1}
+.service-heading-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.service-card h3{font-size:40px;line-height:1.1}
+.service-symbol{width:43px;height:43px;display:grid;place-items:center;border:1px solid #dfcda9;border-radius:50%;color:#a1844e;font-size:21px;flex-shrink:0}
+.service-card p{font-size:13px;color:#716b61;line-height:1.9}
+.service-details{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 24px}
+.service-detail{padding:7px 10px;background:#f3eee4;border:1px solid #e6dccb;color:#67583f;font-size:10px}
+.service-book{margin-top:auto;min-height:52px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--black);border:1px solid var(--black);color:white;font-size:10px;font-weight:700;letter-spacing:.8px;transition:.25s}
+.service-book span:last-child{color:var(--lightgold);font-size:18px}
+.service-book:hover{background:var(--gold);border-color:var(--gold);color:var(--black)}
+.service-book:hover span:last-child{color:var(--black)}
+.service-footer{text-align:center;margin-top:35px}
+.service-footer p{font-size:13px;color:var(--muted);margin-bottom:16px}
+.note{text-align:center;font-size:10px;color:#827a6c;margin-top:23px}
+
+/* SALONE */
+.about{background:var(--dark);color:white}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(40px,7vw,90px)}
+.about-visual{position:relative;min-height:590px}
+.about-image{position:absolute;inset:0 25px 25px 0;background:url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=85") center/cover}
+.about-frame{position:absolute;inset:24px 0 0 24px;border:1px solid var(--gold);pointer-events:none}
+.about-caption{position:absolute;right:0;bottom:0;background:var(--gold);color:var(--black);padding:17px 22px}
+.about-caption strong{display:block;font:500 27px/1.1 var(--serif)}
+.about-caption span{font-size:9px;letter-spacing:1.5px;text-transform:uppercase}
+.about-copy .eyebrow{margin-bottom:15px}
+.about-copy h2{font-size:clamp(48px,5.5vw,72px);margin-bottom:25px}
+.about-copy p{font-size:13px;color:#ccc6ba;margin-bottom:17px}
+.about-rule{width:60px;height:1px;background:var(--gold);margin:27px 0}
+.about-copy .btn{margin-top:8px}
+
+/* GALLERIA */
+.gallery{background:var(--cream)}
+.gallery-grid{display:grid;grid-template-columns:1.25fr .85fr .85fr;grid-template-rows:235px 235px;gap:12px}
+.gallery-item{position:relative;overflow:hidden;background:#d6cdbf;border:0;padding:0;cursor:zoom-in;min-width:0}
+.gallery-item:first-child{grid-row:span 2}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s,filter .4s}
+.gallery-item:hover img{transform:scale(1.06);filter:brightness(.85)}
+.gallery-item:after{content:"+";position:absolute;right:13px;bottom:13px;width:35px;height:35px;display:grid;place-items:center;background:#151411c9;border:1px solid #ffffff8a;color:white;font-size:22px;opacity:0;transition:.25s}
+.gallery-item:hover:after,.gallery-item:focus-visible:after{opacity:1}
+.lightbox{position:fixed;inset:0;z-index:3000;background:#080807f2;display:none;align-items:center;justify-content:center;padding:65px 20px 25px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:94vw;max-height:82vh;object-fit:contain}
+.lightbox-close{position:absolute;right:20px;top:15px;width:45px;height:45px;background:none;border:1px solid #aaa;color:white;font-size:28px;cursor:pointer}
+
+/* RECENSIONI */
+.reviews{background:var(--ivory)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.review-card{background:#fffdf9;border:1px solid #e7dfd2;padding:27px;display:flex;flex-direction:column;min-height:260px}
+.review-stars{color:#ad8a49;letter-spacing:3px;margin-bottom:17px;font-size:13px}
+.review-card blockquote{font:400 23px/1.35 var(--serif);color:#302d27}
+.review-author{margin-top:auto;padding-top:23px;font-size:10px;text-transform:uppercase;letter-spacing:1.2px;font-weight:700;color:#776d5d}
+
+/* CONTATTI E MAPPA */
+.contact{background:var(--black);color:white}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:45px;align-items:stretch}
+.contact-copy .eyebrow{margin-bottom:15px}
+.contact-copy h2{font-size:clamp(49px,6vw,75px);margin-bottom:23px}
+.contact-intro{font-size:13px;color:#c4c0b7;margin-bottom:30px;max-width:420px}
+.contact-list{display:grid;gap:20px}
+.contact-item{display:grid;grid-template-columns:34px 1fr;gap:13px;align-items:start}
+.contact-icon{width:32px;height:32px;border:1px solid #5b5039;color:var(--gold);display:grid;place-items:center}
+.contact-item strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:1.4px;color:var(--gold);margin-bottom:3px}
+.contact-item p,.contact-item a{font-size:12px;color:#e9e5dc}
+.contact-item a:hover{color:var(--lightgold)}
+.contact-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.map-wrap{min-height:460px;overflow:hidden;border:1px solid #65583e;background:#e8e3d8;box-shadow:0 15px 45px #0004}
+.map-wrap iframe{display:block;width:100%;height:100%;min-height:460px;border:0;filter:none}
+
+/* CTA FINALE E FOOTER */
+.final-cta{background:var(--gold);color:var(--black);padding:55px 0}
+.final-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}
+.final-cta h2{font-size:clamp(35px,4.5vw,52px)}
+.final-cta p{font-size:12px;margin-top:6px}
+footer{background:#0e0d0b;color:#a8a399;padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:35px;padding-bottom:32px;border-bottom:1px solid #302d27}
+.footer-brand{font-size:38px;color:white;line-height:1}
+.footer-description{max-width:350px;font-size:12px;margin-top:14px}
+footer h3{font:700 10px var(--sans);letter-spacing:1.7px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+footer p,footer a{font-size:11px;line-height:2;color:#bcb7ac}
+footer a:hover{color:var(--lightgold)}
+.footer-bottom{padding-top:19px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:10px;color:#77736c}
+.floating-booking{position:fixed;left:16px;bottom:16px;z-index:900;background:var(--gold);color:var(--black);padding:14px 18px;font-size:10px;font-weight:700;letter-spacing:.8px;box-shadow:0 6px 25px #0004;transition:.2s}
+.floating-booking:hover{transform:translateY(-3px);background:var(--lightgold)}
+.whatsapp-float{position:fixed;right:16px;bottom:16px;z-index:900;width:53px;height:53px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:white;font-size:23px;box-shadow:0 6px 25px #0004}
+.whatsapp-float:hover{transform:scale(1.06)}
+
+/* MODALE PRENOTAZIONE */
+.booking-modal{position:fixed;inset:0;z-index:2500;background:rgba(9,8,7,.78);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:18px;overflow-y:auto}
+.booking-modal.open{display:flex}
+.booking-panel{position:relative;width:min(650px,100%);max-height:94vh;overflow-y:auto;background:var(--ivory);box-shadow:0 25px 90px #0007;animation:panelIn .25s ease}
+.booking-top{background:var(--black);color:white;padding:27px 30px 24px;position:relative}
+.booking-top .eyebrow{margin-bottom:7px}
+.booking-top h2{font-size:43px;padding-right:38px}
+.booking-top p{font-size:12px;color:#d2c9b7;margin-top:7px}
+.booking-close{position:absolute;right:17px;top:17px;width:40px;height:40px;border:1px solid #615640;background:transparent;color:white;font-size:25px;cursor:pointer}
+.booking-form{padding:26px 30px 30px}
+.form-intro{font-size:12px;color:#756e62;margin-bottom:18px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.field.full{grid-column:1/-1}
+.field label{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#514839}
+.field input,.field select,.field textarea{width:100%;min-width:0;border:1px solid #d9cdb9;background:#fffdf9;color:var(--black);padding:13px 12px;border-radius:0;font-size:13px}
+.field textarea{resize:vertical;min-height:75px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid #c8a96a55;border-color:var(--gold)}
+.booking-hint{font-size:11px;color:#766e60;background:#eee6d9;border-left:2px solid var(--gold);padding:12px 14px;margin:18px 0}
+.booking-submit{width:100%;border:0;cursor:pointer;min-height:54px}
+.booking-privacy{font-size:10px;color:#81796d;margin-top:12px;text-align:center}
+.form-error{display:none;color:#9d3024;font-size:12px;margin:0 0 12px}
+.form-error.show{display:block}
+@keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes heroIn{from{transform:scale(1.04);opacity:.5}to{transform:scale(1);opacity:1}}
+
 @media(max-width:1000px){
-  .nav-links{gap:15px}
-  .nav-links a:not(.nav-cta){font-size:11px}
-  .about-grid{gap:45px}
-  .about-visual{min-height:530px}
-  .gallery-grid{grid-template-rows:210px 210px}
-  .contact-grid{gap:30px}
-  .service-image{height:250px}
-  .service-content{padding:25px}
+ .nav-links{gap:14px}.nav-links a:not(.nav-cta){font-size:10px}
+ .service-image{height:245px}.service-content{padding:23px}
+ .about-grid{gap:40px}.about-visual{min-height:520px}
+ .gallery-grid{grid-template-rows:210px 210px}
+ .contact-grid{gap:28px}
 }
 @media(max-width:800px){
-  :root{--header-height:72px}
-  .menu-toggle{display:block}
-  .nav-links{position:fixed;top:var(--header-height);left:0;right:0;bottom:0;height:calc(100dvh - var(--header-height));overflow-y:auto;background:rgba(21,20,17,.99);display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;padding:25px 7% 45px;visibility:hidden;opacity:0;transform:translateY(-8px);transition:opacity .25s,transform .25s,visibility .25s}
-  .nav-links.active{visibility:visible;opacity:1;transform:translateY(0)}
-  .nav-links li{border-bottom:1px solid #39362e}
-  .nav-links a:not(.nav-cta){display:block;padding:18px 0;font-size:14px}
-  .nav-links .nav-cta{margin-top:24px;width:100%;padding:17px}
-  .about-grid,.contact-grid{grid-template-columns:1fr}
-  .about-visual{min-height:560px;max-width:620px;width:100%;margin:0 auto}
-  .about-copy{max-width:650px}
-  .contact-grid{gap:35px}
-  .map-wrap,.map-wrap iframe{min-height:400px}
-  .reviews-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .footer-grid>div:first-child{grid-column:1/-1}
+ .menu-toggle{display:block}
+ .nav-links{position:fixed;top:76px;left:0;right:0;bottom:0;height:calc(100dvh - 76px);overflow-y:auto;background:#151411;display:flex;flex-direction:column;align-items:stretch;gap:0;padding:20px 7% 40px;visibility:hidden;opacity:0;transform:translateY(-6px);transition:.2s}
+ .nav-links.active{visibility:visible;opacity:1;transform:translateY(0)}
+ .nav-links li{border-bottom:1px solid #39362e}
+ .nav-links a:not(.nav-cta){display:block;padding:16px 0;font-size:13px}
+ .nav-links .nav-cta{margin-top:20px;width:100%;padding:16px}
+ .about-grid,.contact-grid{grid-template-columns:1fr}
+ .about-visual{min-height:530px;max-width:620px;width:100%;margin:auto}
+ .about-copy{max-width:650px}
+ .contact-grid{gap:32px}
+ .map-wrap,.map-wrap iframe{min-height:390px}
+ .reviews-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .footer-grid{grid-template-columns:1fr 1fr}
+ .footer-grid>div:first-child{grid-column:1/-1}
 }
 @media(max-width:560px){
-  section.section{padding:78px 0}
-  .container{width:88%}
-  .brand{font-size:30px}
-  .hero{min-height:760px;min-height:100svh;padding:120px 20px 100px}
-  .hero h1{font-size:clamp(57px,15vw,79px);letter-spacing:-1px}
-  .hero .eyebrow{letter-spacing:3px;font-size:10px}
-  .hero p{font-size:14px}
-  .hero-actions{flex-direction:column;align-items:stretch;max-width:340px;margin:29px auto 0}
-  .hero-actions .btn{width:100%}
-  .hero-note{font-size:9px!important;letter-spacing:2px}
-  .strip-inner{gap:10px;flex-direction:column;align-items:center}
-  .strip-item{font-size:19px}
-  .section-heading{margin-bottom:38px}
-  .section-heading h2{font-size:46px}
-  .services-grid{grid-template-columns:1fr;gap:22px}
-  .service-image{height:250px}
-  .service-content{padding:24px}
-  .service-card h3{font-size:35px}
-  .service-card p{min-height:0}
-  .about-visual{min-height:390px}
-  .about-image{inset:0 18px 20px 0}
-  .about-frame{inset:18px 0 0 18px}
-  .about-caption{padding:14px 16px;max-width:185px}
-  .about-caption strong{font-size:23px}
-  .about-copy h2{font-size:50px}
-  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:230px 150px 150px;gap:8px}
-  .gallery-item:first-child{grid-column:1/-1;grid-row:auto}
-  .gallery-item:nth-child(4){grid-column:1/-1}
-  .gallery-item::after{width:30px;height:30px;right:8px;bottom:8px;opacity:1;transform:none;font-size:19px}
-  .reviews-grid{grid-template-columns:1fr}
-  .review-card{min-height:0;padding:26px}
-  .review-card blockquote{font-size:23px}
-  .contact-copy h2{font-size:53px}
-  .contact-buttons{flex-direction:column}
-  .contact-buttons .btn{width:100%}
-  .map-wrap,.map-wrap iframe{min-height:330px}
-  .final-cta-inner{align-items:flex-start;flex-direction:column}
-  .final-cta .btn{width:100%}
-  .footer-grid{grid-template-columns:1fr;gap:28px}
-  .footer-grid>div:first-child{grid-column:auto}
-  .footer-bottom{flex-direction:column}
-  .floating-booking{left:10px;bottom:10px;padding:13px 12px;font-size:9px;letter-spacing:.5px}
-  .whatsapp-float{right:10px;bottom:10px;width:47px;height:47px;font-size:21px}
+ section.section{padding:75px 0}.container{width:88%}
+ .brand{font-size:30px}
+ .hero{padding:120px 20px 90px}
+ .hero h1{font-size:clamp(56px,14vw,78px);letter-spacing:-1px}
+ .hero .eyebrow{letter-spacing:3px}
+ .hero p{font-size:13px}
+ .hero-actions{flex-direction:column;max-width:340px;margin:28px auto 0}
+ .hero-actions .btn{width:100%}
+ .strip-inner{flex-direction:column;gap:8px}
+ .strip-item{font-size:19px}
+ .section-heading{margin-bottom:35px}
+ .section-heading h2{font-size:45px}
+ .services-grid{grid-template-columns:1fr;gap:20px}
+ .service-image{height:240px}.service-content{padding:23px}
+ .service-card h3{font-size:36px}
+ .about-visual{min-height:380px}
+ .about-image{inset:0 17px 18px 0}.about-frame{inset:17px 0 0 17px}
+ .about-caption{padding:13px 15px}.about-caption strong{font-size:23px}
+ .about-copy h2{font-size:49px}
+ .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:220px 145px 145px;gap:8px}
+ .gallery-item:first-child{grid-column:1/-1;grid-row:auto}
+ .gallery-item:nth-child(4){grid-column:1/-1}
+ .gallery-item:after{opacity:1;width:30px;height:30px;right:8px;bottom:8px}
+ .reviews-grid{grid-template-columns:1fr}
+ .review-card{min-height:0;padding:24px}
+ .contact-copy h2{font-size:51px}
+ .contact-buttons{flex-direction:column}.contact-buttons .btn{width:100%}
+ .map-wrap,.map-wrap iframe{min-height:320px}
+ .final-cta-inner{align-items:stretch;flex-direction:column}
+ .final-cta .btn{width:100%}
+ .footer-grid{grid-template-columns:1fr;gap:25px}
+ .footer-grid>div:first-child{grid-column:auto}
+ .footer-bottom{flex-direction:column}
+ .floating-booking{left:9px;bottom:9px;padding:12px 11px;font-size:9px}
+ .whatsapp-float{right:9px;bottom:9px;width:46px;height:46px;font-size:20px}
+ .booking-top{padding:23px 20px 19px}
+ .booking-top h2{font-size:36px}
+ .booking-form{padding:21px 20px 24px}
+ .form-grid{grid-template-columns:1fr;gap:13px}
+ .field.full{grid-column:auto}
 }
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-  .reveal{opacity:1;transform:none}
+ *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+ .reveal{opacity:1;transform:none}
 }
 </style>
 </head>
 
 <body>
 <header>
-  <div class="container navbar">
-    <a href="#home" class="brand" aria-label="Hair Chic, torna all'inizio">Hair <span>Chic</span></a>
-    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Apri il menu" aria-controls="navLinks" aria-expanded="false">☰</button>
-    <nav aria-label="Navigazione principale">
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#servizi">Servizi</a></li>
-        <li><a href="#chi-siamo">Il salone</a></li>
-        <li><a href="#galleria">Galleria</a></li>
-        <li><a href="#recensioni">Recensioni</a></li>
-        <li><a href="#contatti">Contatti</a></li>
-        <li><a class="nav-cta" href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer">PRENOTA ORA <span aria-hidden="true">↗</span></a></li>
-      </ul>
-    </nav>
-  </div>
+ <div class="container navbar">
+  <a href="#home" class="brand" aria-label="Hair Chic, inizio">Hair <span>Chic</span></a>
+  <button class="menu-toggle" id="menuToggle" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+  <nav aria-label="Navigazione principale">
+   <ul class="nav-links" id="navLinks">
+    <li><a href="#servizi">Servizi</a></li>
+    <li><a href="#chi-siamo">Il salone</a></li>
+    <li><a href="#galleria">Galleria</a></li>
+    <li><a href="#recensioni">Recensioni</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+    <li><a class="nav-cta booking-trigger" href="#prenota">PRENOTA ORA <span>↗</span></a></li>
+   </ul>
+  </nav>
+ </div>
 </header>
 
 <main>
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <span class="eyebrow">Hair Chic · Roma</span>
-      <h1>Il tuo stile.<br><em>La nostra firma.</em></h1>
-      <p>Il piacere di dedicarti del tempo. Scopri i servizi Hair Chic e trova il tuo prossimo look, con un appuntamento pensato per te.</p>
-      <div class="hero-actions">
-        <a class="btn btn-gold" href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer">PRENOTA IL TUO APPUNTAMENTO <span aria-hidden="true">↗</span></a>
-        <a class="btn btn-outline" href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20avere%20informazioni%20per%20un%20appuntamento." target="_blank" rel="noopener noreferrer">SCRIVICI SU WHATSAPP</a>
-      </div>
-      <p class="hero-note">Bellezza · Cura · Personalità</p>
-    </div>
-  </section>
-
-  <div class="intro-strip" aria-label="I valori del salone">
-    <div class="container strip-inner">
-      <span class="strip-item"><span class="strip-dot"></span> Cura dei dettagli</span>
-      <span class="strip-item"><span class="strip-dot"></span> Il tuo stile personale</span>
-      <span class="strip-item"><span class="strip-dot"></span> Tempo per te</span>
-    </div>
+ <section class="hero" id="home">
+  <div class="hero-content">
+   <span class="eyebrow">Hair Chic · Roma</span>
+   <h1>Il tuo stile.<br><em>La nostra firma.</em></h1>
+   <p>Il piacere di dedicarti del tempo. Scopri i servizi Hair Chic e invia la tua richiesta di appuntamento, direttamente dal sito.</p>
+   <div class="hero-actions">
+    <a class="btn btn-gold booking-trigger" href="#prenota">RICHIEDI UN APPUNTAMENTO <span>↗</span></a>
+    <a class="btn btn-outline" href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20informazioni." target="_blank" rel="noopener noreferrer">SCRIVICI SU WHATSAPP</a>
+   </div>
+   <p class="hero-note">Bellezza · Cura · Personalità</p>
   </div>
+ </section>
 
-  <section class="section services" id="servizi">
-    <div class="container">
-      <div class="section-heading reveal">
-        <span class="eyebrow">Una scelta semplice</span>
-        <h2>Il tuo momento, <span>il tuo stile.</span></h2>
-        <p>Scopri le due opzioni presenti nel sistema di prenotazione. Seleziona il servizio che ti interessa per consultare le disponibilità online.</p>
-      </div>
+ <div class="intro-strip">
+  <div class="container strip-inner">
+   <span class="strip-item"><span class="dot"></span> Cura dei dettagli</span>
+   <span class="strip-item"><span class="dot"></span> Il tuo stile personale</span>
+   <span class="strip-item"><span class="dot"></span> Tempo per te</span>
+  </div>
+ </div>
 
-      <div class="services-grid">
-        <article class="service-card reveal">
-          <div class="service-image">
-            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1100&q=85" alt="Immagine illustrativa di taglio e hairstyling" loading="lazy">
-            <span class="service-number">01</span>
-            <span class="service-image-label">La tua bellezza, la tua forma</span>
-          </div>
-          <div class="service-content">
-            <div class="service-heading-row">
-              <h3>Taglio donna</h3>
-              <span class="service-symbol" aria-hidden="true">✂</span>
-            </div>
-            <p>Un look che valorizza il viso e mette in risalto la tua personalità. Il punto di partenza per sentirti bene con i tuoi capelli.</p>
-            <div class="service-details">
-              <span class="service-detail"><span>✧</span> Cura dei dettagli</span>
-              <span class="service-detail"><span>◇</span> Stile personale</span>
-            </div>
-            <a class="service-book" href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer">
-              <span>CONSULTA LE DISPONIBILITÀ</span><span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </article>
+ <section class="section services" id="servizi">
+  <div class="container">
+   <div class="section-heading reveal">
+    <span class="eyebrow">Una scelta semplice</span>
+    <h2>Il tuo momento, <span>il tuo stile.</span></h2>
+    <p>Scegli il servizio che ti interessa e inviaci la tua richiesta. Il salone ti contatterà per confermare data e orario.</p>
+   </div>
 
-        <article class="service-card reveal">
-          <div class="service-image">
-            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1100&q=85" alt="Immagine illustrativa di piega e styling" loading="lazy">
-            <span class="service-number">02</span>
-            <span class="service-image-label">Volume, movimento, luce</span>
-          </div>
-          <div class="service-content">
-            <div class="service-heading-row">
-              <h3>Piega</h3>
-              <span class="service-symbol" aria-hidden="true">✧</span>
-            </div>
-            <p>Movimento, volume e definizione per completare il tuo look, con un risultato da scegliere in base al tuo stile.</p>
-            <div class="service-details">
-              <span class="service-detail"><span>✧</span> Un look curato</span>
-              <span class="service-detail"><span>◇</span> Tempo per te</span>
-            </div>
-            <a class="service-book" href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer">
-              <span>CONSULTA LE DISPONIBILITÀ</span><span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </article>
-      </div>
+   <div class="services-grid">
+    <article class="service-card reveal">
+     <div class="service-image">
+      <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1100&q=85" alt="Immagine illustrativa di hairstyling" loading="lazy">
+      <span class="service-number">01</span>
+      <span class="service-image-label">La tua bellezza, la tua forma</span>
+     </div>
+     <div class="service-content">
+      <div class="service-heading-row"><h3>Taglio donna</h3><span class="service-symbol" aria-hidden="true">✂</span></div>
+      <p>Un look che valorizza il viso e mette in risalto la tua personalità. Raccontaci come vorresti sentirti con i tuoi capelli.</p>
+      <div class="service-details"><span class="service-detail">✧ Cura dei dettagli</span><span class="service-detail">◇ Stile personale</span></div>
+      <a href="#prenota" class="service-book booking-trigger" data-service="Taglio donna"><span>RICHIEDI QUESTO SERVIZIO</span><span>↗</span></a>
+     </div>
+    </article>
 
-      <div class="service-footer reveal">
-        <p>Hai bisogno di informazioni prima di prenotare?</p>
-        <a class="btn btn-gold" href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20informazioni%20sui%20servizi." target="_blank" rel="noopener noreferrer">SCRIVICI SU WHATSAPP <span aria-hidden="true">↗</span></a>
-      </div>
-      <p class="gallery-note">Le immagini dei servizi sono illustrative. Foto, descrizioni e dettagli definitivi potranno essere personalizzati con il salone.</p>
+    <article class="service-card reveal">
+     <div class="service-image">
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1100&q=85" alt="Immagine illustrativa di piega e styling" loading="lazy">
+      <span class="service-number">02</span>
+      <span class="service-image-label">Volume, movimento, luce</span>
+     </div>
+     <div class="service-content">
+      <div class="service-heading-row"><h3>Piega</h3><span class="service-symbol" aria-hidden="true">✧</span></div>
+      <p>Movimento, volume e definizione per completare il tuo look. Scegli la data che preferisci e inviaci la richiesta.</p>
+      <div class="service-details"><span class="service-detail">✧ Un look curato</span><span class="service-detail">◇ Tempo per te</span></div>
+      <a href="#prenota" class="service-book booking-trigger" data-service="Piega"><span>RICHIEDI QUESTO SERVIZIO</span><span>↗</span></a>
+     </div>
+    </article>
+   </div>
+
+   <div class="service-footer reveal">
+    <p>Hai domande prima di scegliere?</p>
+    <a class="btn btn-gold" href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20informazioni%20sui%20servizi." target="_blank" rel="noopener noreferrer">SCRIVICI SU WHATSAPP ↗</a>
+   </div>
+   <p class="note">Immagini e testi dei servizi sono dimostrativi e potranno essere personalizzati con il salone.</p>
+  </div>
+ </section>
+
+ <section class="section about" id="chi-siamo">
+  <div class="container about-grid">
+   <div class="about-visual reveal">
+    <div class="about-image" role="img" aria-label="Immagine illustrativa di styling e cura dei capelli"></div>
+    <div class="about-frame"></div>
+    <div class="about-caption"><strong>Il tuo momento.</strong><span>Hair Chic · Roma</span></div>
+   </div>
+   <div class="about-copy reveal">
+    <span class="eyebrow">Il mondo Hair Chic</span>
+    <h2>Più attenzione.<br><em>Più personalità.</em></h2>
+    <p>Ogni persona ha il proprio stile. Il prossimo look dovrebbe partire da ciò che desideri e da come vuoi sentirti.</p>
+    <p>Hair Chic ti aspetta a Roma, in Via Emanuele Filiberto 24. Contatta il salone per conoscere i servizi e organizzare il tuo prossimo appuntamento.</p>
+    <div class="about-rule"></div>
+    <a class="btn btn-gold booking-trigger" href="#prenota">RICHIEDI UN APPUNTAMENTO ↗</a>
+   </div>
+  </div>
+ </section>
+
+ <section class="section gallery" id="galleria">
+  <div class="container">
+   <div class="section-heading reveal">
+    <span class="eyebrow">Ispirazione e stile</span>
+    <h2>Il nostro <span>mondo.</span></h2>
+    <p>Un percorso visivo dedicato alla bellezza e alla cura dei capelli. Seleziona una fotografia per ingrandirla.</p>
+   </div>
+   <div class="gallery-grid reveal">
+    <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci immagine del salone"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1000&q=85" alt="Ambiente di hairstyling" loading="lazy"></button>
+    <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1527799820374-dcf8f9d4a388?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci immagine di hair styling"><img src="https://images.unsplash.com/photo-1527799820374-dcf8f9d4a388?auto=format&fit=crop&w=850&q=85" alt="Ispirazione per capelli e styling" loading="lazy"></button>
+    <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci immagine di styling"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=850&q=85" alt="Lavoro di hairstyling" loading="lazy"></button>
+    <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci immagine beauty"><img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=850&q=85" alt="Ambiente beauty" loading="lazy"></button>
+    <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci ritratto beauty"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=850&q=85" alt="Ritratto beauty" loading="lazy"></button>
+   </div>
+   <p class="note">Immagini illustrative: potranno essere sostituite con le fotografie reali del salone.</p>
+  </div>
+ </section>
+
+ <section class="section reviews" id="recensioni">
+  <div class="container">
+   <div class="section-heading reveal">
+    <span class="eyebrow">Le esperienze dei clienti</span>
+    <h2>Le vostre <span>parole.</span></h2>
+    <p>Uno spazio dedicato alle recensioni autentiche dei clienti di Hair Chic.</p>
+   </div>
+   <div class="reviews-grid">
+    <article class="review-card reveal"><div class="review-stars" aria-label="Cinque stelle">★★★★★</div><blockquote>“Mi sono trovata benissimo. Patrizio è molto professionale, disponibile e attento alle esigenze del cliente. Ambiente pulito e accogliente.”</blockquote><div class="review-author">Ida De Cresce</div></article>
+    <article class="review-card reveal"><div class="review-stars" aria-label="Cinque stelle">★★★★★</div><blockquote>“Professionalità, gentilezza e grande attenzione al cliente. Un posto dove tornare sicuramente.”</blockquote><div class="review-author">Alessandro Berti</div></article>
+    <article class="review-card reveal"><div class="review-stars" aria-label="Cinque stelle">★★★★★</div><blockquote>“Personale gentile e disponibile. Mi sono sentita subito a mio agio e sono rimasta molto soddisfatta del risultato.”</blockquote><div class="review-author">Sofia Liu</div></article>
+   </div>
+   <p class="note">Prima della pubblicazione definitiva, verificare autenticità, testo e autorizzazione all'utilizzo delle recensioni.</p>
+  </div>
+ </section>
+
+ <section class="section contact" id="contatti">
+  <div class="container contact-grid">
+   <div class="contact-copy reveal">
+    <span class="eyebrow">Vieni a trovarci</span>
+    <h2>Il prossimo look<br><em>inizia qui.</em></h2>
+    <p class="contact-intro">Per informazioni sui servizi, sugli orari e sugli appuntamenti, contatta direttamente Hair Chic.</p>
+    <div class="contact-list">
+     <div class="contact-item"><span class="contact-icon">⌖</span><div><strong>Indirizzo</strong><p>Via Emanuele Filiberto 24, Roma</p></div></div>
+     <div class="contact-item"><span class="contact-icon">☎</span><div><strong>Telefono</strong><a href="tel:+390697276248">06 9727 6248</a></div></div>
+     <div class="contact-item"><span class="contact-icon">↗</span><div><strong>WhatsApp</strong><a href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20informazioni." target="_blank" rel="noopener noreferrer">Scrivi un messaggio</a></div></div>
+     <div class="contact-item"><span class="contact-icon">◷</span><div><strong>Orari indicativi</strong><p>Lunedì – Sabato: 09:00 – 19:00<br>Domenica: chiuso</p></div></div>
     </div>
-  </section>
-
-  <section class="section about" id="chi-siamo">
-    <div class="container about-grid">
-      <div class="about-visual reveal">
-        <div class="about-image" role="img" aria-label="Fotografia illustrativa di styling e cura dei capelli"></div>
-        <div class="about-frame"></div>
-        <div class="about-caption"><strong>Il tuo momento.</strong><span>Hair Chic · Roma</span></div>
-      </div>
-      <div class="about-copy reveal">
-        <span class="eyebrow">Il mondo Hair Chic</span>
-        <h2>Più attenzione.<br><em>Più personalità.</em></h2>
-        <p>Ogni persona ha il proprio stile. Per questo, scegliere il prossimo look dovrebbe partire da ciò che desideri e da come vuoi sentirti.</p>
-        <p>Hair Chic ti aspetta a Roma, in Via Emanuele Filiberto 24. Contatta il salone per conoscere i servizi disponibili e organizzare il tuo prossimo appuntamento.</p>
-        <div class="about-rule"></div>
-        <a class="btn btn-gold" href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer">SCOPRI LE DISPONIBILITÀ <span aria-hidden="true">↗</span></a>
-      </div>
+    <div class="contact-buttons">
+     <a class="btn btn-gold booking-trigger" href="#prenota">RICHIEDI UN APPUNTAMENTO ↗</a>
+     <a class="btn btn-outline" href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20informazioni." target="_blank" rel="noopener noreferrer">CONTATTACI</a>
     </div>
-  </section>
+   </div>
+   <div class="map-wrap reveal">
+    <iframe src="https://maps.google.com/maps?q=Hair%20Chic%2C%20Via%20Emanuele%20Filiberto%2024%2C%20Roma&t=&z=16&ie=UTF8&iwloc=&output=embed" title="Mappa per raggiungere Hair Chic a Roma" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+   </div>
+  </div>
+ </section>
 
-  <section class="section gallery" id="galleria">
-    <div class="container">
-      <div class="section-heading reveal">
-        <span class="eyebrow">Ispirazione e stile</span>
-        <h2>Il nostro <span>mondo.</span></h2>
-        <p>Un percorso visivo dedicato alla bellezza e alla cura dei capelli. Seleziona una fotografia per ingrandirla.</p>
-      </div>
-      <div class="gallery-grid reveal">
-        <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci fotografia di un salone">
-          <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1000&q=85" alt="Ambiente di hairstyling" loading="lazy">
-        </button>
-        <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1527799820374-dcf8f9d4a388?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci fotografia di hair styling">
-          <img src="https://images.unsplash.com/photo-1527799820374-dcf8f9d4a388?auto=format&fit=crop&w=850&q=85" alt="Ispirazione per capelli e styling" loading="lazy">
-        </button>
-        <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci fotografia di styling">
-          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=850&q=85" alt="Lavoro di hairstyling" loading="lazy">
-        </button>
-        <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci fotografia di un ambiente beauty">
-          <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=850&q=85" alt="Ispirazione per un ambiente beauty" loading="lazy">
-        </button>
-        <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci fotografia beauty">
-          <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=850&q=85" alt="Ritratto beauty e ispirazione per il look" loading="lazy">
-        </button>
-      </div>
-      <p class="gallery-note">Immagini illustrative: sostituibili con fotografie reali del salone e dei suoi lavori.</p>
-    </div>
-  </section>
-
-  <section class="section reviews" id="recensioni">
-    <div class="container">
-      <div class="section-heading reveal">
-        <span class="eyebrow">Le esperienze dei clienti</span>
-        <h2>Le vostre <span>parole.</span></h2>
-        <p>Uno spazio dedicato alle recensioni autentiche dei clienti di Hair Chic.</p>
-      </div>
-      <div class="reviews-grid">
-        <article class="review-card reveal">
-          <div class="review-stars" aria-label="Cinque stelle">★★★★★</div>
-          <blockquote>“Mi sono trovata benissimo. Patrizio è molto professionale, disponibile e attento alle esigenze del cliente. Ambiente pulito e accogliente.”</blockquote>
-          <div class="review-author">Ida De Cresce</div>
-        </article>
-        <article class="review-card reveal">
-          <div class="review-stars" aria-label="Cinque stelle">★★★★★</div>
-          <blockquote>“Professionalità, gentilezza e grande attenzione al cliente. Un posto dove tornare sicuramente.”</blockquote>
-          <div class="review-author">Alessandro Berti</div>
-        </article>
-        <article class="review-card reveal">
-          <div class="review-stars" aria-label="Cinque stelle">★★★★★</div>
-          <blockquote>“Personale gentile e disponibile. Mi sono sentita subito a mio agio e sono rimasta molto soddisfatta del risultato.”</blockquote>
-          <div class="review-author">Sofia Liu</div>
-        </article>
-      </div>
-      <p class="review-disclaimer">Prima della pubblicazione definitiva, verificare con il salone l'autenticità, il testo e l'autorizzazione all'utilizzo di ogni recensione.</p>
-    </div>
-  </section>
-
-  <section class="section contact" id="contatti">
-    <div class="container contact-grid">
-      <div class="contact-copy reveal">
-        <span class="eyebrow">Vieni a trovarci</span>
-        <h2>Il prossimo look<br><em>inizia qui.</em></h2>
-        <p class="contact-intro">Per informazioni sui servizi, sugli orari e sugli appuntamenti, contatta direttamente Hair Chic.</p>
-        <div class="contact-list">
-          <div class="contact-item">
-            <span class="contact-icon" aria-hidden="true">⌖</span>
-            <div><strong>Indirizzo</strong><p>Via Emanuele Filiberto 24, Roma</p></div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-icon" aria-hidden="true">☎</span>
-            <div><strong>Telefono</strong><a href="tel:+390697276248">06 9727 6248</a></div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-icon" aria-hidden="true">↗</span>
-            <div><strong>WhatsApp</strong><a href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20avere%20informazioni%20per%20un%20appuntamento." target="_blank" rel="noopener noreferrer">Scrivi un messaggio</a></div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-icon" aria-hidden="true">◷</span>
-            <div><strong>Orari indicativi</strong><p>Lunedì – Sabato: 09:00 – 19:00<br>Domenica: chiuso</p></div>
-          </div>
-        </div>
-        <div class="contact-buttons">
-          <a class="btn btn-gold" href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer">PRENOTA ONLINE <span aria-hidden="true">↗</span></a>
-          <a class="btn btn-outline" href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20avere%20informazioni." target="_blank" rel="noopener noreferrer">CONTATTACI</a>
-        </div>
-      </div>
-      <div class="map-wrap reveal">
-        <iframe src="https://maps.google.com/maps?q=Hair%20Chic%2C%20Via%20Emanuele%20Filiberto%2024%2C%20Roma&t=&z=16&ie=UTF8&iwloc=&output=embed" title="Mappa a colori per raggiungere Hair Chic, Via Emanuele Filiberto 24 a Roma" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-      </div>
-    </div>
-  </section>
-
-  <section class="final-cta">
-    <div class="container final-cta-inner">
-      <div>
-        <h2>Prenditi un momento per te.</h2>
-        <p>Contatta Hair Chic o consulta il sistema di prenotazione online.</p>
-      </div>
-      <a class="btn" href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer">PRENOTA ORA <span aria-hidden="true">↗</span></a>
-    </div>
-  </section>
+ <section class="final-cta">
+  <div class="container final-cta-inner">
+   <div><h2>Prenditi un momento per te.</h2><p>Inviaci la tua richiesta: il salone ti contatterà per confermare l'appuntamento.</p></div>
+   <a class="btn btn-dark booking-trigger" href="#prenota">SCEGLI DATA E ORARIO ↗</a>
+  </div>
+ </section>
 </main>
 
 <footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">Hair <span>Chic</span></div>
-        <p class="footer-description">Hair Chic Roma. Scopri i servizi, contatta il salone e organizza il tuo prossimo appuntamento.</p>
-      </div>
-      <div>
-        <h3>Contatti</h3>
-        <p>Via Emanuele Filiberto 24<br>Roma</p>
-        <p><a href="tel:+390697276248">06 9727 6248</a></p>
-        <p><a href="https://wa.me/390697276248" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></p>
-      </div>
-      <div>
-        <h3>Esplora</h3>
-        <p><a href="#servizi">Servizi</a></p>
-        <p><a href="#galleria">Galleria</a></p>
-        <p><a href="#contatti">Contatti e mappa</a></p>
-        <p><a href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer">Prenota online ↗</a></p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© <span id="currentYear">2026</span> Hair Chic Roma.</span>
-      <span>Demo grafica da sottoporre all'approvazione del salone.</span>
-    </div>
+ <div class="container">
+  <div class="footer-grid">
+   <div><div class="footer-brand">Hair <span>Chic</span></div><p class="footer-description">Hair Chic Roma. Scopri i servizi, contatta il salone e organizza il tuo prossimo appuntamento.</p></div>
+   <div><h3>Contatti</h3><p>Via Emanuele Filiberto 24<br>Roma</p><p><a href="tel:+390697276248">06 9727 6248</a></p><p><a href="https://wa.me/390697276248" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></p></div>
+   <div><h3>Esplora</h3><p><a href="#servizi">Servizi</a></p><p><a href="#galleria">Galleria</a></p><p><a href="#contatti">Contatti e mappa</a></p><p><a href="#prenota" class="booking-trigger">Richiedi un appuntamento ↗</a></p></div>
   </div>
+  <div class="footer-bottom"><span>© <span id="currentYear">2026</span> Hair Chic Roma.</span><span>Demo grafica da sottoporre all'approvazione del salone.</span></div>
+ </div>
 </footer>
 
-<a class="floating-booking" href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer" aria-label="Prenota un appuntamento online">PRENOTA ORA ↗</a>
-<a class="whatsapp-float" href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20avere%20informazioni%20per%20un%20appuntamento." target="_blank" rel="noopener noreferrer" aria-label="Contatta Hair Chic su WhatsApp">☎</a>
+<a href="#prenota" class="floating-booking booking-trigger" aria-label="Richiedi un appuntamento">PRENOTA ORA ↗</a>
+<a class="whatsapp-float" href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20informazioni." target="_blank" rel="noopener noreferrer" aria-label="Contatta Hair Chic su WhatsApp">☏</a>
+
+<!-- MODALE PRENOTAZIONE -->
+<div class="booking-modal" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingTitle" aria-hidden="true">
+ <div class="booking-panel">
+  <div class="booking-top">
+   <button class="booking-close" id="bookingClose" type="button" aria-label="Chiudi prenotazione">×</button>
+   <span class="eyebrow">Hair Chic · Roma</span>
+   <h2 id="bookingTitle">Il tuo prossimo<br>appuntamento.</h2>
+   <p>Raccontaci quando vorresti venire: ti ricontatteremo per confermare.</p>
+  </div>
+  <form class="booking-form" id="bookingForm">
+   <p class="form-intro">Compila i campi qui sotto per preparare la tua richiesta su WhatsApp.</p>
+   <div class="form-grid">
+    <div class="field full">
+     <label for="service">Servizio desiderato *</label>
+     <select id="service" name="service" required>
+      <option value="">Seleziona un servizio</option>
+      <option value="Taglio donna">Taglio donna</option>
+      <option value="Piega">Piega</option>
+      <option value="Altro / da concordare">Altro / da concordare</option>
+     </select>
+    </div>
+    <div class="field">
+     <label for="bookingDate">Data desiderata *</label>
+     <input id="bookingDate" name="date" type="date" required>
+    </div>
+    <div class="field">
+     <label for="bookingTime">Orario preferito *</label>
+     <select id="bookingTime" name="time" required>
+      <option value="">Scegli un orario</option>
+      <option>09:00</option><option>09:30</option>
+      <option>10:00</option><option>10:30</option>
+      <option>11:00</option><option>11:30</option>
+      <option>12:00</option><option>12:30</option>
+      <option>13:00</option><option>13:30</option>
+      <option>14:00</option><option>14:30</option>
+      <option>15:00</option><option>15:30</option>
+      <option>16:00</option><option>16:30</option>
+      <option>17:00</option><option>17:30</option>
+      <option>18:00</option><option>18:30</option>
+     </select>
+    </div>
+    <div class="field">
+     <label for="customerName">Nome e cognome *</label>
+     <input id="customerName" name="name" autocomplete="name" required maxlength="100" placeholder="Il tuo nome">
+    </div>
+    <div class="field">
+     <label for="customerPhone">Il tuo telefono *</label>
+     <input id="customerPhone" name="phone" type="tel" autocomplete="tel" required maxlength="30" placeholder="Il tuo numero">
+    </div>
+    <div class="field full">
+     <label for="bookingNotes">Note (facoltative)</label>
+     <textarea id="bookingNotes" name="notes" maxlength="500" placeholder="Se vuoi, aggiungi una nota..."></textarea>
+    </div>
+   </div>
+   <div class="booking-hint">La data e l'orario sono preferenze, non disponibilità confermate. L'appuntamento sarà valido solo dopo la conferma del salone su WhatsApp.</div>
+   <p class="form-error" id="formError" role="alert"></p>
+   <button class="btn btn-gold booking-submit" type="submit">INVIA LA RICHIESTA SU WHATSAPP ↗</button>
+   <p class="booking-privacy">Premendo il pulsante si aprirà WhatsApp con i dati della richiesta. Potrai controllare il messaggio prima di inviarlo.</p>
+  </form>
+ </div>
+</div>
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Immagine ingrandita">
-  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Chiudi immagine">×</button>
-  <img id="lightboxImage" src="" alt="Fotografia ingrandita della galleria">
+ <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Chiudi immagine">×</button>
+ <img id="lightboxImage" src="" alt="Fotografia ingrandita della galleria">
 </div>
 
 <script>
 (() => {
-  const menuButton = document.getElementById('menuToggle');
-  const nav = document.getElementById('navLinks');
+ const PHONE = "390697276248";
+ const menuButton = document.getElementById("menuToggle");
+ const nav = document.getElementById("navLinks");
 
-  function closeMenu() {
-    nav.classList.remove('active');
-    menuButton.setAttribute('aria-expanded', 'false');
-    menuButton.setAttribute('aria-label', 'Apri il menu');
-    menuButton.textContent = '☰';
-    document.body.classList.remove('menu-open');
+ function closeMenu(){
+  nav.classList.remove("active");
+  menuButton.setAttribute("aria-expanded","false");
+  menuButton.setAttribute("aria-label","Apri il menu");
+  menuButton.textContent="☰";
+  document.body.classList.remove("menu-open");
+ }
+ menuButton.addEventListener("click",()=>{
+  const open=!nav.classList.contains("active");
+  nav.classList.toggle("active",open);
+  menuButton.setAttribute("aria-expanded",String(open));
+  menuButton.setAttribute("aria-label",open?"Chiudi il menu":"Apri il menu");
+  menuButton.textContent=open?"×":"☰";
+  document.body.classList.toggle("menu-open",open);
+ });
+ nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",closeMenu));
+
+ // Apertura e chiusura calendario
+ const modal=document.getElementById("bookingModal");
+ const closeBooking=document.getElementById("bookingClose");
+ const serviceSelect=document.getElementById("service");
+ let lastFocus=null;
+
+ function openBooking(service){
+  lastFocus=document.activeElement;
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden","false");
+  document.body.classList.add("locked");
+  if(service && [...serviceSelect.options].some(o=>o.value===service)){
+   serviceSelect.value=service;
   }
+  closeBooking.focus();
+ }
+ function hideBooking(){
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden","true");
+  document.body.classList.remove("locked");
+  if(lastFocus) lastFocus.focus();
+ }
+ document.querySelectorAll(".booking-trigger").forEach(link=>{
+  link.addEventListener("click",event=>{
+   event.preventDefault();
+   closeMenu();
+   openBooking(link.dataset.service || "");
+  });
+ });
+ closeBooking.addEventListener("click",hideBooking);
+ modal.addEventListener("click",event=>{
+  if(event.target===modal) hideBooking();
+ });
 
-  menuButton.addEventListener('click', () => {
-    const open = !nav.classList.contains('active');
-    if (open) {
-      nav.classList.add('active');
-      menuButton.setAttribute('aria-expanded', 'true');
-      menuButton.setAttribute('aria-label', 'Chiudi il menu');
-      menuButton.textContent = '×';
-      document.body.classList.add('menu-open');
-    } else {
-      closeMenu();
+ // Impedisce date passate e avvisa se viene scelto un giorno di domenica.
+ const dateInput=document.getElementById("bookingDate");
+ const today=new Date();
+ const localToday=new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().slice(0,10);
+ dateInput.min=localToday;
+
+ function validateDate(){
+  if(!dateInput.value) return true;
+  const day=new Date(dateInput.value+"T12:00:00").getDay();
+  if(day===0){
+   document.getElementById("formError").textContent="Il salone risulta indicato come chiuso la domenica. Scegli un altro giorno.";
+   document.getElementById("formError").classList.add("show");
+   dateInput.setCustomValidity("Scegli un giorno diverso dalla domenica.");
+   return false;
+  }
+  dateInput.setCustomValidity("");
+  document.getElementById("formError").classList.remove("show");
+  return true;
+ }
+ dateInput.addEventListener("change",validateDate);
+
+ // Prepara il messaggio: il cliente lo controlla e lo invia da WhatsApp.
+ document.getElementById("bookingForm").addEventListener("submit",event=>{
+  event.preventDefault();
+  const error=document.getElementById("formError");
+  error.classList.remove("show");
+  if(!validateDate()){
+   dateInput.reportValidity();
+   return;
+  }
+  const form=new FormData(event.currentTarget);
+  const date=new Date(String(form.get("date"))+"T12:00:00");
+  const readableDate=new Intl.DateTimeFormat("it-IT",{day:"2-digit",month:"long",year:"numeric"}).format(date);
+  const message=[
+   "Ciao Hair Chic, vorrei richiedere un appuntamento.",
+   "",
+   "Servizio: "+form.get("service"),
+   "Data desiderata: "+readableDate,
+   "Orario preferito: "+form.get("time"),
+   "Nome: "+form.get("name"),
+   "Telefono: "+form.get("phone"),
+   "Note: "+(form.get("notes") || "Nessuna"),
+   "",
+   "So che data e orario devono essere confermati dal salone."
+  ].join("\n");
+  const url="https://wa.me/"+PHONE+"?text="+encodeURIComponent(message);
+  const opened=window.open(url,"_blank","noopener,noreferrer");
+  if(!opened){
+   window.location.href=url;
+  }
+ });
+
+ // Galleria con lightbox
+ const lightbox=document.getElementById("lightbox");
+ const lightboxImage=document.getElementById("lightboxImage");
+ const lightboxClose=document.getElementById("lightboxClose");
+ let previousFocus=null;
+ function openLightbox(src,alt){
+  previousFocus=document.activeElement;
+  lightboxImage.src=src;
+  lightboxImage.alt=alt || "Fotografia ingrandita";
+  lightbox.classList.add("open");
+  document.body.classList.add("locked");
+  lightboxClose.focus();
+ }
+ function hideLightbox(){
+  if(!lightbox.classList.contains("open")) return;
+  lightbox.classList.remove("open");
+  lightboxImage.src="";
+  document.body.classList.remove("locked");
+  if(previousFocus) previousFocus.focus();
+ }
+ document.querySelectorAll(".gallery-item").forEach(button=>{
+  button.addEventListener("click",()=>{
+   const img=button.querySelector("img");
+   openLightbox(button.dataset.full,img ? img.alt : "");
+  });
+ });
+ lightboxClose.addEventListener("click",hideLightbox);
+ lightbox.addEventListener("click",event=>{
+  if(event.target===lightbox) hideLightbox();
+ });
+ document.addEventListener("keydown",event=>{
+  if(event.key==="Escape"){
+   closeMenu();
+   hideBooking();
+   hideLightbox();
+  }
+ });
+
+ // Animazioni all'apparire delle sezioni
+ const items=document.querySelectorAll(".reveal");
+ if("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+  const observer=new IntersectionObserver(entries=>{
+   entries.forEach(entry=>{
+    if(entry.isIntersecting){
+     entry.target.classList.add("visible");
+     observer.unobserve(entry.target);
     }
-  });
-
-  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImage = document.getElementById('lightboxImage');
-  const lightboxClose = document.getElementById('lightboxClose');
-  let previousFocus = null;
-
-  function openLightbox(src, alt) {
-    previousFocus = document.activeElement;
-    lightboxImage.src = src;
-    lightboxImage.alt = alt || 'Fotografia ingrandita';
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    lightboxClose.focus();
-  }
-
-  function closeLightbox() {
-    if (!lightbox.classList.contains('open')) return;
-    lightbox.classList.remove('open');
-    lightboxImage.src = '';
-    document.body.style.overflow = '';
-    if (previousFocus) previousFocus.focus();
-  }
-
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') {
-      closeMenu();
-      closeLightbox();
-    }
-  });
-
-  document.querySelectorAll('.gallery-item').forEach(button => {
-    button.addEventListener('click', () => {
-      const image = button.querySelector('img');
-      openLightbox(button.dataset.full, image ? image.alt : '');
-    });
-  });
-
-  lightboxClose.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', event => {
-    if (event.target === lightbox) closeLightbox();
-  });
-
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const revealItems = document.querySelectorAll('.reveal');
-
-  if ('IntersectionObserver' in window && !reduceMotion) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    revealItems.forEach(item => observer.observe(item));
-  } else {
-    revealItems.forEach(item => item.classList.add('visible'));
-  }
-
-  document.getElementById('currentYear').textContent = new Date().getFullYear();
+   });
+  },{threshold:.12});
+  items.forEach(item=>observer.observe(item));
+ }else{
+  items.forEach(item=>item.classList.add("visible"));
+ }
+ document.getElementById("currentYear").textContent=new Date().getFullYear();
 })();
 </script>
 </body>
