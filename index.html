@@ -46,7 +46,7 @@ p{overflow-wrap:break-word}
 :focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 
 /* HEADER */
-header{height:var(--header-height);position:fixed;inset:0 0 auto;z-index:1000;background:rgba(21,20,17,.95);border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(14px)}
+header{height:var(--header-height);position:fixed;inset:0 0 auto;z-index:1000;background:rgba(21,20,17,.96);border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(14px)}
 .navbar{height:100%;display:flex;align-items:center;justify-content:space-between;gap:25px}
 .brand{font-size:34px;line-height:1;color:white;letter-spacing:.4px;white-space:nowrap}
 .brand span,.footer-brand span{color:var(--gold)}
@@ -75,32 +75,43 @@ header{height:var(--header-height);position:fixed;inset:0 0 auto;z-index:1000;ba
 .btn-outline:hover{background:white;border-color:white;color:var(--black)}
 .hero-note{margin-top:45px!important;font-size:10px!important;letter-spacing:3px;text-transform:uppercase;color:#d2c9b7!important}
 
-/* DECORATIVE STRIP */
+/* STRIP */
 .intro-strip{background:var(--black);color:#eae2d3;border-block:1px solid var(--line)}
 .strip-inner{min-height:84px;display:flex;justify-content:center;align-items:center;gap:clamp(20px,5vw,65px);flex-wrap:wrap;padding:20px 0}
 .strip-item{font-family:var(--serif);font-size:21px;display:flex;align-items:center;gap:13px}
 .strip-dot{width:5px;height:5px;background:var(--gold);border-radius:50%}
 
-/* SHARED SECTIONS */
+/* SECTIONS */
 section.section{padding:110px 0}
 .section-heading{text-align:center;max-width:760px;margin:0 auto 56px}
 .section-heading .eyebrow{margin-bottom:14px}
 .section-heading p{max-width:610px;margin:19px auto 0;color:var(--muted);font-size:14px}
 .section-heading h2 span{color:#aa8950;font-style:italic}
-.section-kicker{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600}
 
-/* SERVICES */
-.services{background:var(--ivory)}
-.services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #ded5c7;border-left:1px solid #ded5c7}
-.service-card{min-height:260px;padding:32px 29px;border-right:1px solid #ded5c7;border-bottom:1px solid #ded5c7;display:flex;flex-direction:column;transition:background .3s}
-.service-card:hover{background:#fffdf9}
-.service-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-.service-number{font-family:var(--serif);font-size:22px;color:#b1935e}
-.service-symbol{width:38px;height:38px;border:1px solid #ded2bd;border-radius:50%;display:grid;place-items:center;color:#a1844e;font-size:17px}
-.service-card h3{font-size:32px;line-height:1.1;margin-bottom:13px}
-.service-card p{font-size:13px;color:#706c64;line-height:1.8}
-.service-bottom{margin-top:auto;padding-top:22px;color:#987943;font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase}
-.service-footer{text-align:center;margin-top:38px}
+/* TWO PREMIUM SERVICE CARDS */
+.services{background:linear-gradient(180deg,#f7f4ee 0%,#eee7db 100%)}
+.services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;max-width:960px;margin:0 auto}
+.service-card{position:relative;overflow:hidden;background:#fffdf9;border:1px solid #ded2bd;box-shadow:0 12px 35px rgba(44,35,20,.06);transition:transform .35s,box-shadow .35s,border-color .35s;display:flex;flex-direction:column;min-width:0}
+.service-card:hover{transform:translateY(-8px);box-shadow:0 24px 55px rgba(44,35,20,.14);border-color:var(--gold)}
+.service-image{height:290px;position:relative;overflow:hidden;background:#d8cbbb}
+.service-image img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.service-card:hover .service-image img{transform:scale(1.06)}
+.service-image::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,18,14,.7),transparent 65%)}
+.service-number{position:absolute;top:18px;left:18px;z-index:1;width:43px;height:43px;display:grid;place-items:center;background:rgba(21,20,17,.8);border:1px solid var(--gold);border-radius:50%;color:var(--gold-light);font-family:var(--serif);font-size:20px}
+.service-image-label{position:absolute;bottom:19px;left:24px;z-index:1;color:white;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
+.service-content{padding:29px 30px 31px;display:flex;flex-direction:column;flex:1}
+.service-heading-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.service-card h3{font-size:clamp(32px,4vw,42px);line-height:1.05;color:#29251e}
+.service-symbol{width:43px;height:43px;flex-shrink:0;display:grid;place-items:center;border:1px solid #d9c49b;border-radius:50%;color:#a1844e;font-size:20px}
+.service-card p{font-size:13px;color:#706c64;line-height:1.9;min-height:50px}
+.service-details{display:flex;gap:9px;flex-wrap:wrap;margin:21px 0 24px}
+.service-detail{display:inline-flex;align-items:center;gap:7px;background:#f3eee4;border:1px solid #e6dccb;padding:8px 11px;color:#64563e;font-size:10px;letter-spacing:.4px}
+.service-detail span{color:#a1844e;font-size:13px}
+.service-book{width:100%;min-height:53px;margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 17px;background:var(--black);border:1px solid var(--black);color:white;font-size:10px;font-weight:700;letter-spacing:1.1px;transition:background .25s,border-color .25s,color .25s}
+.service-book span:last-child{color:var(--gold-light);font-size:18px;transition:transform .25s}
+.service-book:hover{background:var(--gold);border-color:var(--gold);color:var(--black)}
+.service-book:hover span:last-child{color:var(--black);transform:translateX(4px)}
+.service-footer{text-align:center;margin-top:35px}
 .service-footer p{font-size:13px;color:var(--muted);margin-bottom:17px}
 
 /* ABOUT */
@@ -145,7 +156,7 @@ section.section{padding:110px 0}
 .review-author{margin-top:auto;padding-top:25px;font-size:10px;text-transform:uppercase;letter-spacing:1.3px;font-weight:700;color:#776d5d}
 .review-disclaimer{max-width:750px;margin:25px auto 0;text-align:center;font-size:11px;color:#817a6e}
 
-/* CONTACT */
+/* CONTACT AND FULL-COLOR MAP */
 .contact{background:var(--black);color:white}
 .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:stretch}
 .contact-copy .eyebrow{margin-bottom:16px}
@@ -159,8 +170,8 @@ section.section{padding:110px 0}
 .contact-item p,.contact-item a{font-size:13px;color:#e9e5dc}
 .contact-item a:hover{color:var(--gold-light)}
 .contact-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
-.map-wrap{min-height:480px;border:1px solid #4a463d;background:#26241f}
-.map-wrap iframe{width:100%;height:100%;min-height:480px;border:0;filter:grayscale(.8) contrast(.95)}
+.map-wrap{min-height:480px;position:relative;overflow:hidden;border:1px solid #65583e;background:#e8e3d8;box-shadow:0 15px 45px rgba(0,0,0,.25)}
+.map-wrap iframe{display:block;width:100%;height:100%;min-height:480px;border:0;filter:none!important;}
 
 /* FINAL CTA */
 .final-cta{background:var(--gold);color:var(--black);padding:57px 0}
@@ -180,12 +191,11 @@ footer p,footer a{font-size:12px;line-height:2;color:#bcb7ac}
 footer a:hover{color:var(--gold-light)}
 .footer-bottom{padding-top:20px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:10px;color:#77736c}
 
-/* FLOATING ACTIONS */
+/* FLOATING BUTTONS */
 .floating-booking{position:fixed;left:18px;bottom:18px;z-index:900;display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--gold);color:var(--black);padding:15px 20px;font-size:10px;letter-spacing:1px;font-weight:700;box-shadow:0 6px 25px rgba(0,0,0,.25);transition:transform .2s,background .2s}
 .floating-booking:hover{transform:translateY(-3px);background:var(--gold-light)}
 .whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:900;width:54px;height:54px;display:grid;place-items:center;border-radius:50%;background:#25d366;color:white;font-size:23px;box-shadow:0 6px 25px rgba(0,0,0,.25);transition:transform .2s}
 .whatsapp-float:hover{transform:scale(1.07)}
-/* Entrance animations */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 @keyframes heroReveal{from{transform:scale(1.045);opacity:.5}to{transform:scale(1);opacity:1}}
@@ -194,11 +204,12 @@ footer a:hover{color:var(--gold-light)}
 @media(max-width:1000px){
   .nav-links{gap:15px}
   .nav-links a:not(.nav-cta){font-size:11px}
-  .services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .about-grid{gap:45px}
   .about-visual{min-height:530px}
   .gallery-grid{grid-template-rows:210px 210px}
   .contact-grid{gap:30px}
+  .service-image{height:250px}
+  .service-content{padding:25px}
 }
 @media(max-width:800px){
   :root{--header-height:72px}
@@ -232,9 +243,11 @@ footer a:hover{color:var(--gold-light)}
   .strip-item{font-size:19px}
   .section-heading{margin-bottom:38px}
   .section-heading h2{font-size:46px}
-  .services-grid{grid-template-columns:1fr}
-  .service-card{min-height:225px;padding:26px}
-  .service-card h3{font-size:31px}
+  .services-grid{grid-template-columns:1fr;gap:22px}
+  .service-image{height:250px}
+  .service-content{padding:24px}
+  .service-card h3{font-size:35px}
+  .service-card p{min-height:0}
   .about-visual{min-height:390px}
   .about-image{inset:0 18px 20px 0}
   .about-frame{inset:18px 0 0 18px}
@@ -310,52 +323,62 @@ footer a:hover{color:var(--gold-light)}
   <section class="section services" id="servizi">
     <div class="container">
       <div class="section-heading reveal">
-        <span class="eyebrow">Scopri i servizi</span>
-        <h2>La bellezza, <span>su misura.</span></h2>
-        <p>Ogni look racconta qualcosa di te. Esplora le principali categorie e contatta il salone per informazioni sui servizi disponibili e sui relativi prezzi.</p>
+        <span class="eyebrow">Una scelta semplice</span>
+        <h2>Il tuo momento, <span>il tuo stile.</span></h2>
+        <p>Scopri le due opzioni presenti nel sistema di prenotazione. Seleziona il servizio che ti interessa per consultare le disponibilità online.</p>
       </div>
+
       <div class="services-grid">
         <article class="service-card reveal">
-          <div class="service-top"><span class="service-number">01</span><span class="service-symbol" aria-hidden="true">✳</span></div>
-          <h3>Taglio</h3>
-          <p>Una forma che valorizza il viso e rispecchia il tuo modo di essere.</p>
-          <span class="service-bottom">Scopri le opzioni disponibili ↗</span>
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1100&q=85" alt="Immagine illustrativa di taglio e hairstyling" loading="lazy">
+            <span class="service-number">01</span>
+            <span class="service-image-label">La tua bellezza, la tua forma</span>
+          </div>
+          <div class="service-content">
+            <div class="service-heading-row">
+              <h3>Taglio donna</h3>
+              <span class="service-symbol" aria-hidden="true">✂</span>
+            </div>
+            <p>Un look che valorizza il viso e mette in risalto la tua personalità. Il punto di partenza per sentirti bene con i tuoi capelli.</p>
+            <div class="service-details">
+              <span class="service-detail"><span>✧</span> Cura dei dettagli</span>
+              <span class="service-detail"><span>◇</span> Stile personale</span>
+            </div>
+            <a class="service-book" href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer">
+              <span>CONSULTA LE DISPONIBILITÀ</span><span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </article>
+
         <article class="service-card reveal">
-          <div class="service-top"><span class="service-number">02</span><span class="service-symbol" aria-hidden="true">◌</span></div>
-          <h3>Colore</h3>
-          <p>Tonalità e riflessi per dare carattere e luminosità al tuo look.</p>
-          <span class="service-bottom">Informazioni in salone ↗</span>
-        </article>
-        <article class="service-card reveal">
-          <div class="service-top"><span class="service-number">03</span><span class="service-symbol" aria-hidden="true">〰</span></div>
-          <h3>Piega</h3>
-          <p>Volume, movimento e definizione per completare il tuo stile.</p>
-          <span class="service-bottom">Scopri le opzioni disponibili ↗</span>
-        </article>
-        <article class="service-card reveal">
-          <div class="service-top"><span class="service-number">04</span><span class="service-symbol" aria-hidden="true">✧</span></div>
-          <h3>Trattamenti</h3>
-          <p>Attenzioni dedicate alla cura dei capelli, in base alle tue esigenze.</p>
-          <span class="service-bottom">Informazioni in salone ↗</span>
-        </article>
-        <article class="service-card reveal">
-          <div class="service-top"><span class="service-number">05</span><span class="service-symbol" aria-hidden="true">◇</span></div>
-          <h3>Styling</h3>
-          <p>Un tocco finale curato per la quotidianità e le occasioni speciali.</p>
-          <span class="service-bottom">Richiedi informazioni ↗</span>
-        </article>
-        <article class="service-card reveal">
-          <div class="service-top"><span class="service-number">06</span><span class="service-symbol" aria-hidden="true">✳</span></div>
-          <h3>Consulenza</h3>
-          <p>Parliamo del risultato che desideri e delle possibilità da valutare.</p>
-          <span class="service-bottom">Contatta il salone ↗</span>
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1100&q=85" alt="Immagine illustrativa di piega e styling" loading="lazy">
+            <span class="service-number">02</span>
+            <span class="service-image-label">Volume, movimento, luce</span>
+          </div>
+          <div class="service-content">
+            <div class="service-heading-row">
+              <h3>Piega</h3>
+              <span class="service-symbol" aria-hidden="true">✧</span>
+            </div>
+            <p>Movimento, volume e definizione per completare il tuo look, con un risultato da scegliere in base al tuo stile.</p>
+            <div class="service-details">
+              <span class="service-detail"><span>✧</span> Un look curato</span>
+              <span class="service-detail"><span>◇</span> Tempo per te</span>
+            </div>
+            <a class="service-book" href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer">
+              <span>CONSULTA LE DISPONIBILITÀ</span><span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </article>
       </div>
+
       <div class="service-footer reveal">
-        <p>Vuoi sapere quali servizi sono disponibili e quanto costano?</p>
-        <a class="btn btn-gold" href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20informazioni%20sui%20servizi%20e%20sui%20prezzi." target="_blank" rel="noopener noreferrer">CHIEDI INFORMAZIONI <span aria-hidden="true">↗</span></a>
+        <p>Hai bisogno di informazioni prima di prenotare?</p>
+        <a class="btn btn-gold" href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20informazioni%20sui%20servizi." target="_blank" rel="noopener noreferrer">SCRIVICI SU WHATSAPP <span aria-hidden="true">↗</span></a>
       </div>
+      <p class="gallery-note">Le immagini dei servizi sono illustrative. Foto, descrizioni e dettagli definitivi potranno essere personalizzati con il salone.</p>
     </div>
   </section>
 
@@ -463,7 +486,7 @@ footer a:hover{color:var(--gold-light)}
         </div>
       </div>
       <div class="map-wrap reveal">
-        <iframe src="https://www.google.com/maps?q=Via%20Emanuele%20Filiberto%2024%2C%20Roma&output=embed" title="Mappa per raggiungere Hair Chic, Via Emanuele Filiberto 24 a Roma" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <iframe src="https://maps.google.com/maps?q=Hair%20Chic%2C%20Via%20Emanuele%20Filiberto%2024%2C%20Roma&t=&z=16&ie=UTF8&iwloc=&output=embed" title="Mappa a colori per raggiungere Hair Chic, Via Emanuele Filiberto 24 a Roma" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -543,13 +566,6 @@ footer a:hover{color:var(--gold-light)}
 
   nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') {
-      closeMenu();
-      closeLightbox();
-    }
-  });
-
   const lightbox = document.getElementById('lightbox');
   const lightboxImage = document.getElementById('lightboxImage');
   const lightboxClose = document.getElementById('lightboxClose');
@@ -571,6 +587,13 @@ footer a:hover{color:var(--gold-light)}
     document.body.style.overflow = '';
     if (previousFocus) previousFocus.focus();
   }
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      closeMenu();
+      closeLightbox();
+    }
+  });
 
   document.querySelectorAll('.gallery-item').forEach(button => {
     button.addEventListener('click', () => {
