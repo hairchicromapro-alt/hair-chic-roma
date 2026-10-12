@@ -1,10 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hair Chic Roma | Parrucchiere</title>
-<meta name="description" content="Hair Chic Roma, Via Emanuele Filiberto 24. Scopri i nostri servizi e prenota online.">
+<meta name="theme-color" content="#151411">
+<title>Hair Chic Roma | Il tuo stile, la nostra firma</title>
+<meta name="description" content="Scopri Hair Chic a Roma, in Via Emanuele Filiberto 24. Esplora i servizi e prenota il tuo appuntamento online.">
+<meta property="og:title" content="Hair Chic Roma | Il tuo stile, la nostra firma">
+<meta property="og:description" content="Scopri il mondo Hair Chic e prenota il tuo prossimo appuntamento a Roma.">
+<meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,345 +17,593 @@
 
 <style>
 :root {
-    --black:#111111;
-    --dark:#181818;
-    --ivory:#f7f3ec;
-    --cream:#eee8dc;
-    --gold:#c8a96a;
-    --white:#ffffff;
-    --gray:#777777;
+  --black:#151411;
+  --dark:#201e19;
+  --ivory:#f7f4ee;
+  --cream:#eae3d7;
+  --gold:#c8a96a;
+  --gold-light:#dfc997;
+  --white:#fff;
+  --muted:#77736c;
+  --line:rgba(200,169,106,.3);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',Arial,sans-serif;
+  --header-height:82px;
 }
-* {margin:0;padding:0;box-sizing:border-box}
-html {scroll-behavior:smooth;scroll-padding-top:90px}
-body {font-family:'Inter',sans-serif;background:var(--ivory);color:var(--black);line-height:1.6}
-img {max-width:100%;display:block}
-a {text-decoration:none;color:inherit}
-button {font-family:inherit}
-.container {width:min(1180px,90%);margin:auto}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{font-family:var(--sans);background:var(--ivory);color:var(--black);line-height:1.7}
+body.menu-open{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img{display:block;max-width:100%}
+button,a{-webkit-tap-highlight-color:transparent}
+.container{width:min(1180px,90%);margin-inline:auto}
+.eyebrow{display:block;color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:600}
+h1,h2,h3,.brand,.footer-brand{font-family:var(--serif);font-weight:500}
+h2{font-size:clamp(42px,5.5vw,68px);line-height:1.02;letter-spacing:-1px}
+p{overflow-wrap:break-word}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 
 /* HEADER */
-header {
-    position:fixed;top:0;left:0;width:100%;z-index:1000;
-    background:rgba(17,17,17,.97);backdrop-filter:blur(10px);
-}
-.navbar {min-height:78px;display:flex;align-items:center;justify-content:space-between}
-.logo {font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:white;letter-spacing:1px}
-.logo span,.footer-logo span {color:var(--gold)}
-.nav-links {display:flex;gap:22px;align-items:center;list-style:none}
-.nav-links a {color:white;font-size:13px;transition:.3s}
-.nav-links a:hover {color:var(--gold)}
-.nav-links .nav-cta {
-    display:inline-flex;align-items:center;justify-content:center;
-    background:var(--gold);color:#111;padding:13px 20px;
-    border-radius:3px;font-weight:700;white-space:nowrap;
-}
-.nav-links .nav-cta:hover {background:#ddc28a;color:#111}
-.menu-toggle {display:none;color:white;font-size:28px;cursor:pointer;background:none;border:0}
-
-/* BUTTONS */
-.btn {
-    display:inline-flex!important;justify-content:center;align-items:center;
-    min-height:54px;padding:14px 25px;border:1px solid var(--gold);
-    transition:.3s;cursor:pointer;font-size:14px;font-weight:700;
-    text-align:center;text-decoration:none!important;visibility:visible!important;
-    opacity:1!important;position:relative;
-}
-.btn-gold {background:var(--gold)!important;color:#111!important}
-.btn-gold:hover {background:#ddc28a!important;transform:translateY(-2px)}
-.btn-outline {color:white!important;background:rgba(0,0,0,.3)}
-.btn-outline:hover {background:white!important;color:#111!important}
-.booking-link {display:inline-flex;align-items:center;justify-content:center;gap:9px}
+header{height:var(--header-height);position:fixed;inset:0 0 auto;z-index:1000;background:rgba(21,20,17,.95);border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(14px)}
+.navbar{height:100%;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand{font-size:34px;line-height:1;color:white;letter-spacing:.4px;white-space:nowrap}
+.brand span,.footer-brand span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:25px;list-style:none}
+.nav-links a:not(.nav-cta){font-size:12px;color:#e5e1d8;transition:color .25s}
+.nav-links a:not(.nav-cta):hover{color:var(--gold-light)}
+.nav-cta{display:inline-flex;justify-content:center;align-items:center;gap:10px;padding:13px 18px;background:var(--gold);color:var(--black);font-size:11px;font-weight:700;letter-spacing:1px;transition:background .25s,transform .25s}
+.nav-cta:hover{background:var(--gold-light);transform:translateY(-2px)}
+.menu-toggle{display:none;width:44px;height:44px;border:1px solid #514b3e;background:transparent;color:white;font-size:24px;cursor:pointer}
 
 /* HERO */
-.hero {
-    min-height:100vh;
-    background:linear-gradient(rgba(0,0,0,.48),rgba(0,0,0,.68)),
-    url("https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=2000&q=85") center/cover;
-    display:flex;align-items:center;text-align:center;color:white;
-    padding:130px 20px 80px;
-}
-.hero-content {max-width:850px;margin:auto;width:100%}
-.hero small {display:block;color:var(--gold);text-transform:uppercase;letter-spacing:4px;font-size:13px;margin-bottom:20px}
-.hero h1 {font-family:'Cormorant Garamond',serif;font-size:clamp(55px,9vw,105px);line-height:.95;font-weight:500;margin-bottom:30px}
-.hero p {max-width:650px;margin:auto;font-size:17px;color:#eee}
-.hero-buttons {margin-top:38px;display:flex;justify-content:center;align-items:center;gap:15px;flex-wrap:wrap}
-.hero-buttons .btn {min-width:220px}
+.hero{position:relative;min-height:760px;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:145px 20px 110px;text-align:center;color:white;background:#171511;isolation:isolate;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:url("https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=2200&q=85") center 48%/cover no-repeat;animation:heroReveal 1.3s ease both}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(12,11,9,.77),rgba(12,11,9,.34) 50%,rgba(12,11,9,.62)),linear-gradient(0deg,rgba(12,11,9,.58),transparent 55%)}
+.hero-content{max-width:880px}
+.hero .eyebrow{margin-bottom:26px;letter-spacing:5px}
+.hero h1{font-size:clamp(64px,10vw,116px);line-height:.88;letter-spacing:-2px;margin-bottom:28px}
+.hero h1 em{font-weight:400;color:var(--gold-light)}
+.hero p{max-width:600px;margin:auto;color:#e8e4dd;font-size:16px;font-weight:300;line-height:1.9}
+.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:13px;margin-top:36px}
+.btn{min-height:54px;padding:15px 24px;display:inline-flex;align-items:center;justify-content:center;gap:12px;border:1px solid var(--gold);font-size:11px;letter-spacing:1px;font-weight:700;text-align:center;transition:transform .25s,background .25s,color .25s,border-color .25s}
+.btn:hover{transform:translateY(-3px)}
+.btn-gold{background:var(--gold);color:var(--black)}
+.btn-gold:hover{background:var(--gold-light);border-color:var(--gold-light)}
+.btn-outline{background:rgba(20,19,16,.22);color:white}
+.btn-outline:hover{background:white;border-color:white;color:var(--black)}
+.hero-note{margin-top:45px!important;font-size:10px!important;letter-spacing:3px;text-transform:uppercase;color:#d2c9b7!important}
 
-/* SECTIONS */
-section {padding:100px 0}
-.section-title {text-align:center;margin-bottom:55px}
-.section-title small {color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:12px}
-.section-title h2 {font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6vw,65px);font-weight:500;line-height:1;margin-top:10px}
-.section-title p {max-width:650px;margin:20px auto 0;color:var(--gray)}
+/* DECORATIVE STRIP */
+.intro-strip{background:var(--black);color:#eae2d3;border-block:1px solid var(--line)}
+.strip-inner{min-height:84px;display:flex;justify-content:center;align-items:center;gap:clamp(20px,5vw,65px);flex-wrap:wrap;padding:20px 0}
+.strip-item{font-family:var(--serif);font-size:21px;display:flex;align-items:center;gap:13px}
+.strip-dot{width:5px;height:5px;background:var(--gold);border-radius:50%}
+
+/* SHARED SECTIONS */
+section.section{padding:110px 0}
+.section-heading{text-align:center;max-width:760px;margin:0 auto 56px}
+.section-heading .eyebrow{margin-bottom:14px}
+.section-heading p{max-width:610px;margin:19px auto 0;color:var(--muted);font-size:14px}
+.section-heading h2 span{color:#aa8950;font-style:italic}
+.section-kicker{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600}
 
 /* SERVICES */
-.services {background:var(--ivory)}
-.services-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
-.service-card {background:white;padding:38px 30px;border:1px solid #e7e0d5;transition:.35s;display:flex;flex-direction:column}
-.service-card:hover {transform:translateY(-7px);box-shadow:0 18px 40px rgba(0,0,0,.08)}
-.service-number {font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--gold)}
-.service-card h3 {font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;margin:10px 0 15px}
-.service-card p {color:#666;font-size:14px;min-height:70px}
-.service-price {display:block;margin-top:auto;padding-top:22px;font-weight:600}
-.services-booking {text-align:center;margin-top:45px}
-.services-booking p {color:var(--gray);margin-bottom:20px;font-size:14px}
+.services{background:var(--ivory)}
+.services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #ded5c7;border-left:1px solid #ded5c7}
+.service-card{min-height:260px;padding:32px 29px;border-right:1px solid #ded5c7;border-bottom:1px solid #ded5c7;display:flex;flex-direction:column;transition:background .3s}
+.service-card:hover{background:#fffdf9}
+.service-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.service-number{font-family:var(--serif);font-size:22px;color:#b1935e}
+.service-symbol{width:38px;height:38px;border:1px solid #ded2bd;border-radius:50%;display:grid;place-items:center;color:#a1844e;font-size:17px}
+.service-card h3{font-size:32px;line-height:1.1;margin-bottom:13px}
+.service-card p{font-size:13px;color:#706c64;line-height:1.8}
+.service-bottom{margin-top:auto;padding-top:22px;color:#987943;font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase}
+.service-footer{text-align:center;margin-top:38px}
+.service-footer p{font-size:13px;color:var(--muted);margin-bottom:17px}
 
 /* ABOUT */
-.about {background:var(--dark);color:white}
-.about-grid {display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-.about-image {min-height:600px;background:url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=85") center/cover}
-.about-text small {color:var(--gold);text-transform:uppercase;letter-spacing:3px}
-.about-text h2 {font-family:'Cormorant Garamond',serif;font-size:clamp(45px,6vw,70px);line-height:1;font-weight:500;margin:15px 0 25px}
-.about-text p {color:#ccc;margin-bottom:18px}
-.about-buttons {display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.about{background:var(--dark);color:white}
+.about-grid{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:clamp(40px,7vw,95px)}
+.about-visual{position:relative;min-height:620px}
+.about-image{position:absolute;inset:0 28px 28px 0;background:url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=85") center/cover no-repeat}
+.about-frame{position:absolute;inset:25px 0 0 25px;border:1px solid var(--gold);pointer-events:none}
+.about-caption{position:absolute;right:0;bottom:0;background:var(--gold);color:var(--black);padding:19px 23px;max-width:230px}
+.about-caption strong{display:block;font-family:var(--serif);font-size:26px;line-height:1.05;font-weight:500}
+.about-caption span{display:block;font-size:9px;letter-spacing:1.7px;text-transform:uppercase;margin-top:8px}
+.about-copy .eyebrow{margin-bottom:16px}
+.about-copy h2{font-size:clamp(48px,5.7vw,72px);margin-bottom:26px}
+.about-copy h2 em{color:var(--gold-light);font-weight:400}
+.about-copy p{color:#c8c4bb;font-size:14px;margin-bottom:18px}
+.about-rule{width:65px;height:1px;background:var(--gold);margin:28px 0}
+.about-copy .btn{margin-top:12px}
 
 /* GALLERY */
-.gallery {background:var(--cream)}
-.gallery-grid {display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:12px}
-.gallery-item {overflow:hidden;position:relative;background:#ddd5c8}
-.gallery-item img {width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.gallery-item:hover img {transform:scale(1.06)}
-.gallery-item.large {grid-column:span 2;grid-row:span 2}
+.gallery{background:var(--cream)}
+.gallery-grid{display:grid;grid-template-columns:1.25fr .85fr .85fr;grid-template-rows:240px 240px;gap:13px}
+.gallery-item{position:relative;overflow:hidden;background:#d6cdbf;border:0;padding:0;cursor:zoom-in;text-align:left;min-width:0}
+.gallery-item:first-child{grid-row:span 2}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .65s,filter .65s}
+.gallery-item:hover img{transform:scale(1.06);filter:brightness(.86)}
+.gallery-item::after{content:"+";position:absolute;right:15px;bottom:15px;width:37px;height:37px;display:grid;place-items:center;background:rgba(20,19,16,.76);border:1px solid rgba(255,255,255,.5);color:white;font-size:23px;font-weight:300;opacity:0;transform:translateY(5px);transition:.3s}
+.gallery-item:hover::after,.gallery-item:focus-visible::after{opacity:1;transform:translateY(0)}
+.gallery-note{text-align:center;font-size:11px;color:#777064;margin-top:22px}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;z-index:2000;background:rgba(8,8,7,.94);display:none;align-items:center;justify-content:center;padding:65px 22px 25px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:min(1100px,94vw);max-height:82vh;object-fit:contain}
+.lightbox-close{position:absolute;right:22px;top:16px;width:46px;height:46px;border:1px solid #aaa;background:transparent;color:white;font-size:28px;cursor:pointer}
 
 /* REVIEWS */
-.reviews {background:var(--ivory)}
-.reviews-wrapper {max-width:1000px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.review-card {background:white;padding:35px;border:1px solid #e5ddd1}
-.stars {color:var(--gold);letter-spacing:4px;margin-bottom:15px}
-.review-card p {font-family:'Cormorant Garamond',serif;font-size:23px;line-height:1.4}
-.review-author {margin-top:20px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+.reviews{background:var(--ivory)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.review-card{background:#fffdf9;border:1px solid #e7dfd2;padding:29px;display:flex;flex-direction:column;min-height:260px}
+.review-stars{color:#ad8a49;letter-spacing:3px;font-size:13px;margin-bottom:20px}
+.review-card blockquote{font-family:var(--serif);font-size:23px;line-height:1.35;color:#302d27}
+.review-author{margin-top:auto;padding-top:25px;font-size:10px;text-transform:uppercase;letter-spacing:1.3px;font-weight:700;color:#776d5d}
+.review-disclaimer{max-width:750px;margin:25px auto 0;text-align:center;font-size:11px;color:#817a6e}
 
 /* CONTACT */
-.contact {background:var(--dark);color:white}
-.contact-grid {display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:stretch}
-.contact-info h2 {font-family:'Cormorant Garamond',serif;font-size:60px;font-weight:500;line-height:1;margin:15px 0 30px}
-.contact-info p {color:#ccc;margin-bottom:25px}
-.contact-details {display:grid;gap:18px}
-.contact-detail strong {display:block;color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:2px;margin-bottom:4px}
-.contact-detail a,.contact-detail span {color:white}
-.contact-detail a:hover {color:var(--gold)}
-.contact-actions {display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.contact-map {min-height:430px;border:1px solid #444}
-.contact-map iframe {width:100%;height:100%;min-height:430px;border:0}
+.contact{background:var(--black);color:white}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:stretch}
+.contact-copy .eyebrow{margin-bottom:16px}
+.contact-copy h2{font-size:clamp(49px,6vw,76px);margin-bottom:25px}
+.contact-copy h2 em{color:var(--gold-light);font-weight:400}
+.contact-intro{font-size:14px;color:#c4c0b7;margin-bottom:33px;max-width:420px}
+.contact-list{display:grid;gap:22px}
+.contact-item{display:grid;grid-template-columns:34px 1fr;gap:13px;align-items:start}
+.contact-icon{width:32px;height:32px;border:1px solid #5b5039;color:var(--gold);display:grid;place-items:center;font-size:14px}
+.contact-item strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:3px}
+.contact-item p,.contact-item a{font-size:13px;color:#e9e5dc}
+.contact-item a:hover{color:var(--gold-light)}
+.contact-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.map-wrap{min-height:480px;border:1px solid #4a463d;background:#26241f}
+.map-wrap iframe{width:100%;height:100%;min-height:480px;border:0;filter:grayscale(.8) contrast(.95)}
 
-/* WHATSAPP FLOATING */
-.whatsapp-button {
-    position:fixed;right:20px;bottom:20px;z-index:1100;
-    background:#25D366!important;color:white!important;
-    width:58px;height:58px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    font-size:26px;box-shadow:0 8px 25px rgba(0,0,0,.25);transition:.3s;
-}
-.whatsapp-button:hover {transform:scale(1.08)}
-
-/* BOOKING FLOATING BUTTON */
-.booking-fixed {
-    position:fixed;left:20px;bottom:22px;z-index:1100;
-    display:flex!important;align-items:center;justify-content:center;
-    background:#c8a96a!important;color:#111!important;
-    padding:16px 22px;border:1px solid #e0c58b;border-radius:4px;
-    font-family:'Inter',sans-serif;font-size:13px;font-weight:700;
-    text-align:center;box-shadow:0 8px 25px rgba(0,0,0,.25);
-    visibility:visible!important;opacity:1!important;
-}
-.booking-fixed:hover {background:#ddc28a!important;transform:translateY(-2px)}
+/* FINAL CTA */
+.final-cta{background:var(--gold);color:var(--black);padding:57px 0}
+.final-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
+.final-cta h2{font-size:clamp(35px,4.5vw,53px)}
+.final-cta p{font-size:13px;margin-top:7px;color:#3d3426}
+.final-cta .btn{border-color:var(--black);background:var(--black);color:white;white-space:nowrap}
+.final-cta .btn:hover{background:#302b20}
 
 /* FOOTER */
-footer {background:#0d0d0d;color:#aaa;padding:45px 0 25px}
-.footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:35px;border-bottom:1px solid #292929}
-.footer-logo {font-family:'Cormorant Garamond',serif;font-size:38px;color:white}
-footer h4 {color:white;margin-bottom:15px}
-footer p,footer a {font-size:14px;color:#aaa}
-footer a:hover {color:var(--gold)}
-.footer-bottom {padding-top:20px;font-size:12px;text-align:center}
+footer{background:#0e0d0b;color:#a8a399;padding:52px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:35px;border-bottom:1px solid #302d27}
+.footer-brand{font-size:38px;color:white;line-height:1}
+.footer-description{max-width:360px;font-size:12px;margin-top:15px}
+footer h3{font-family:var(--sans);font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-bottom:17px}
+footer p,footer a{font-size:12px;line-height:2;color:#bcb7ac}
+footer a:hover{color:var(--gold-light)}
+.footer-bottom{padding-top:20px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:10px;color:#77736c}
 
-/* TABLET */
-@media(max-width:900px) {
-    .nav-links {position:absolute;top:78px;left:0;width:100%;background:#111;display:none;flex-direction:column;padding:25px;gap:22px}
-    .nav-links.active {display:flex}
-    .menu-toggle {display:block}
-    .services-grid {grid-template-columns:repeat(2,1fr)}
-    .about-grid,.contact-grid {grid-template-columns:1fr}
-    .about-image {min-height:450px}
-    .gallery-grid {grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}
-    .gallery-item.large {grid-column:span 2;grid-row:span 2}
-    .footer-grid {grid-template-columns:1fr}
+/* FLOATING ACTIONS */
+.floating-booking{position:fixed;left:18px;bottom:18px;z-index:900;display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--gold);color:var(--black);padding:15px 20px;font-size:10px;letter-spacing:1px;font-weight:700;box-shadow:0 6px 25px rgba(0,0,0,.25);transition:transform .2s,background .2s}
+.floating-booking:hover{transform:translateY(-3px);background:var(--gold-light)}
+.whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:900;width:54px;height:54px;display:grid;place-items:center;border-radius:50%;background:#25d366;color:white;font-size:23px;box-shadow:0 6px 25px rgba(0,0,0,.25);transition:transform .2s}
+.whatsapp-float:hover{transform:scale(1.07)}
+/* Entrance animations */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes heroReveal{from{transform:scale(1.045);opacity:.5}to{transform:scale(1);opacity:1}}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .nav-links{gap:15px}
+  .nav-links a:not(.nav-cta){font-size:11px}
+  .services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about-grid{gap:45px}
+  .about-visual{min-height:530px}
+  .gallery-grid{grid-template-rows:210px 210px}
+  .contact-grid{gap:30px}
 }
-
-/* MOBILE */
-@media(max-width:600px) {
-    section {padding:75px 0}
-    .navbar {min-height:70px}
-    .hero {min-height:100vh;padding:120px 20px 115px}
-    .hero h1 {font-size:58px}
-    .hero p {font-size:15px}
-    .hero-buttons {flex-direction:column;align-items:stretch;margin-top:28px}
-    .hero-buttons .btn {width:100%;min-height:54px}
-    .services-grid,.reviews-wrapper {grid-template-columns:1fr}
-    .gallery-grid {grid-template-columns:1fr 1fr;grid-auto-rows:160px}
-    .review-card {padding:30px 22px}
-    .review-card p {font-size:21px}
-    .contact-info h2 {font-size:48px}
-    .about-image {min-height:350px}
-    .contact-actions,.about-buttons {flex-direction:column}
-    .contact-actions .btn,.about-buttons .btn {width:100%}
-    .booking-fixed {left:10px;bottom:12px;padding:15px 12px;font-size:11px;min-height:48px}
-    .whatsapp-button {right:10px;bottom:12px;width:48px;height:48px;font-size:22px}
+@media(max-width:800px){
+  :root{--header-height:72px}
+  .menu-toggle{display:block}
+  .nav-links{position:fixed;top:var(--header-height);left:0;right:0;bottom:0;height:calc(100dvh - var(--header-height));overflow-y:auto;background:rgba(21,20,17,.99);display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;padding:25px 7% 45px;visibility:hidden;opacity:0;transform:translateY(-8px);transition:opacity .25s,transform .25s,visibility .25s}
+  .nav-links.active{visibility:visible;opacity:1;transform:translateY(0)}
+  .nav-links li{border-bottom:1px solid #39362e}
+  .nav-links a:not(.nav-cta){display:block;padding:18px 0;font-size:14px}
+  .nav-links .nav-cta{margin-top:24px;width:100%;padding:17px}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .about-visual{min-height:560px;max-width:620px;width:100%;margin:0 auto}
+  .about-copy{max-width:650px}
+  .contact-grid{gap:35px}
+  .map-wrap,.map-wrap iframe{min-height:400px}
+  .reviews-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-grid>div:first-child{grid-column:1/-1}
+}
+@media(max-width:560px){
+  section.section{padding:78px 0}
+  .container{width:88%}
+  .brand{font-size:30px}
+  .hero{min-height:760px;min-height:100svh;padding:120px 20px 100px}
+  .hero h1{font-size:clamp(57px,15vw,79px);letter-spacing:-1px}
+  .hero .eyebrow{letter-spacing:3px;font-size:10px}
+  .hero p{font-size:14px}
+  .hero-actions{flex-direction:column;align-items:stretch;max-width:340px;margin:29px auto 0}
+  .hero-actions .btn{width:100%}
+  .hero-note{font-size:9px!important;letter-spacing:2px}
+  .strip-inner{gap:10px;flex-direction:column;align-items:center}
+  .strip-item{font-size:19px}
+  .section-heading{margin-bottom:38px}
+  .section-heading h2{font-size:46px}
+  .services-grid{grid-template-columns:1fr}
+  .service-card{min-height:225px;padding:26px}
+  .service-card h3{font-size:31px}
+  .about-visual{min-height:390px}
+  .about-image{inset:0 18px 20px 0}
+  .about-frame{inset:18px 0 0 18px}
+  .about-caption{padding:14px 16px;max-width:185px}
+  .about-caption strong{font-size:23px}
+  .about-copy h2{font-size:50px}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:230px 150px 150px;gap:8px}
+  .gallery-item:first-child{grid-column:1/-1;grid-row:auto}
+  .gallery-item:nth-child(4){grid-column:1/-1}
+  .gallery-item::after{width:30px;height:30px;right:8px;bottom:8px;opacity:1;transform:none;font-size:19px}
+  .reviews-grid{grid-template-columns:1fr}
+  .review-card{min-height:0;padding:26px}
+  .review-card blockquote{font-size:23px}
+  .contact-copy h2{font-size:53px}
+  .contact-buttons{flex-direction:column}
+  .contact-buttons .btn{width:100%}
+  .map-wrap,.map-wrap iframe{min-height:330px}
+  .final-cta-inner{align-items:flex-start;flex-direction:column}
+  .final-cta .btn{width:100%}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+  .footer-grid>div:first-child{grid-column:auto}
+  .footer-bottom{flex-direction:column}
+  .floating-booking{left:10px;bottom:10px;padding:13px 12px;font-size:9px;letter-spacing:.5px}
+  .whatsapp-float{right:10px;bottom:10px;width:47px;height:47px;font-size:21px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
 }
 </style>
 </head>
 
 <body>
-
 <header>
-    <div class="container navbar">
-        <a href="#home" class="logo">Hair <span>Chic</span></a>
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Apri il menu" aria-expanded="false" id="menuToggle">☰</button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#servizi">Servizi</a></li>
-            <li><a href="#chi-siamo">Chi siamo</a></li>
-            <li><a href="#galleria">Galleria</a></li>
-            <li><a href="#recensioni">Recensioni</a></li>
-            <li><a href="#contatti">Contatti</a></li>
-            <li><a href="https://book.plandok.com/it/hair-chic-nhupai" class="nav-cta" target="_blank" rel="noopener noreferrer">PRENOTA ORA ↗</a></li>
-        </ul>
-    </div>
+  <div class="container navbar">
+    <a href="#home" class="brand" aria-label="Hair Chic, torna all'inizio">Hair <span>Chic</span></a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Apri il menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+    <nav aria-label="Navigazione principale">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#chi-siamo">Il salone</a></li>
+        <li><a href="#galleria">Galleria</a></li>
+        <li><a href="#recensioni">Recensioni</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+        <li><a class="nav-cta" href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer">PRENOTA ORA <span aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <main>
-<section class="hero" id="home">
+  <section class="hero" id="home">
     <div class="hero-content">
-        <small>Hair Chic Roma</small>
-        <h1>Il tuo stile.<br>La nostra firma.</h1>
-        <p>Un salone dove tecnica, cura e personalità si incontrano per creare il look che parla davvero di te.</p>
-        <div class="hero-buttons">
-            <a href="https://book.plandok.com/it/hair-chic-nhupai" class="btn btn-gold" target="_blank" rel="noopener noreferrer">PRENOTA ORA ↗</a>
-            <a href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20avere%20informazioni%20per%20un%20appuntamento." class="btn btn-outline" target="_blank" rel="noopener noreferrer">Contattaci su WhatsApp</a>
-        </div>
+      <span class="eyebrow">Hair Chic · Roma</span>
+      <h1>Il tuo stile.<br><em>La nostra firma.</em></h1>
+      <p>Il piacere di dedicarti del tempo. Scopri i servizi Hair Chic e trova il tuo prossimo look, con un appuntamento pensato per te.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer">PRENOTA IL TUO APPUNTAMENTO <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-outline" href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20avere%20informazioni%20per%20un%20appuntamento." target="_blank" rel="noopener noreferrer">SCRIVICI SU WHATSAPP</a>
+      </div>
+      <p class="hero-note">Bellezza · Cura · Personalità</p>
     </div>
-</section>
+  </section>
 
-<section class="services" id="servizi">
+  <div class="intro-strip" aria-label="I valori del salone">
+    <div class="container strip-inner">
+      <span class="strip-item"><span class="strip-dot"></span> Cura dei dettagli</span>
+      <span class="strip-item"><span class="strip-dot"></span> Il tuo stile personale</span>
+      <span class="strip-item"><span class="strip-dot"></span> Tempo per te</span>
+    </div>
+  </div>
+
+  <section class="section services" id="servizi">
     <div class="container">
-        <div class="section-title">
-            <small>I nostri servizi</small>
-            <h2>La bellezza, su misura.</h2>
-            <p>Ogni servizio nasce dall'ascolto delle tue esigenze e dalla cura di ogni dettaglio.</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card"><span class="service-number">01</span><h3>Taglio Donna</h3><p>Un taglio studiato sulla forma del viso, sulla texture dei capelli e sul tuo stile personale.</p><span class="service-price">A partire da €45</span></div>
-            <div class="service-card"><span class="service-number">02</span><h3>Colore</h3><p>Colori personalizzati, luminosità e tonalità pensate per valorizzare naturalmente il tuo look.</p><span class="service-price">Consulenza in salone</span></div>
-            <div class="service-card"><span class="service-number">03</span><h3>Piega</h3><p>Volume, movimento e definizione per un risultato elegante e curato in ogni occasione.</p><span class="service-price">A partire da €25</span></div>
-            <div class="service-card"><span class="service-number">04</span><h3>Trattamenti</h3><p>Percorsi dedicati alla salute e alla bellezza del capello, scelti in base alle sue necessità.</p><span class="service-price">Su consulenza</span></div>
-            <div class="service-card"><span class="service-number">05</span><h3>Styling</h3><p>Acconciature e styling personalizzati per eventi, occasioni speciali o per sentirti al meglio.</p><span class="service-price">Su richiesta</span></div>
-            <div class="service-card"><span class="service-number">06</span><h3>Consulenza</h3><p>Un momento dedicato per capire insieme il look, il colore o il trattamento più adatto a te.</p><span class="service-price">Contattaci</span></div>
-        </div>
-        <div class="services-booking">
-            <p>Hai già in mente il tuo prossimo look?</p>
-            <a href="https://book.plandok.com/it/hair-chic-nhupai" class="btn btn-gold" target="_blank" rel="noopener noreferrer">PRENOTA IL TUO APPUNTAMENTO ↗</a>
-        </div>
+      <div class="section-heading reveal">
+        <span class="eyebrow">Scopri i servizi</span>
+        <h2>La bellezza, <span>su misura.</span></h2>
+        <p>Ogni look racconta qualcosa di te. Esplora le principali categorie e contatta il salone per informazioni sui servizi disponibili e sui relativi prezzi.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <div class="service-top"><span class="service-number">01</span><span class="service-symbol" aria-hidden="true">✳</span></div>
+          <h3>Taglio</h3>
+          <p>Una forma che valorizza il viso e rispecchia il tuo modo di essere.</p>
+          <span class="service-bottom">Scopri le opzioni disponibili ↗</span>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-top"><span class="service-number">02</span><span class="service-symbol" aria-hidden="true">◌</span></div>
+          <h3>Colore</h3>
+          <p>Tonalità e riflessi per dare carattere e luminosità al tuo look.</p>
+          <span class="service-bottom">Informazioni in salone ↗</span>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-top"><span class="service-number">03</span><span class="service-symbol" aria-hidden="true">〰</span></div>
+          <h3>Piega</h3>
+          <p>Volume, movimento e definizione per completare il tuo stile.</p>
+          <span class="service-bottom">Scopri le opzioni disponibili ↗</span>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-top"><span class="service-number">04</span><span class="service-symbol" aria-hidden="true">✧</span></div>
+          <h3>Trattamenti</h3>
+          <p>Attenzioni dedicate alla cura dei capelli, in base alle tue esigenze.</p>
+          <span class="service-bottom">Informazioni in salone ↗</span>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-top"><span class="service-number">05</span><span class="service-symbol" aria-hidden="true">◇</span></div>
+          <h3>Styling</h3>
+          <p>Un tocco finale curato per la quotidianità e le occasioni speciali.</p>
+          <span class="service-bottom">Richiedi informazioni ↗</span>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-top"><span class="service-number">06</span><span class="service-symbol" aria-hidden="true">✳</span></div>
+          <h3>Consulenza</h3>
+          <p>Parliamo del risultato che desideri e delle possibilità da valutare.</p>
+          <span class="service-bottom">Contatta il salone ↗</span>
+        </article>
+      </div>
+      <div class="service-footer reveal">
+        <p>Vuoi sapere quali servizi sono disponibili e quanto costano?</p>
+        <a class="btn btn-gold" href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20informazioni%20sui%20servizi%20e%20sui%20prezzi." target="_blank" rel="noopener noreferrer">CHIEDI INFORMAZIONI <span aria-hidden="true">↗</span></a>
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="about" id="chi-siamo">
+  <section class="section about" id="chi-siamo">
     <div class="container about-grid">
-        <div class="about-image" role="img" aria-label="Immagine di un salone di bellezza"></div>
-        <div class="about-text">
-            <small>Chi siamo</small>
-            <h2>Più di un salone.<br>Un'esperienza.</h2>
-            <p>Hair Chic nasce dalla passione per la bellezza, dalla cura dei dettagli e dal desiderio di creare un ambiente nel quale sentirsi davvero a proprio agio.</p>
-            <p>Dalla consulenza alla realizzazione del look, ogni momento è pensato per valorizzare la tua personalità e la naturale bellezza dei tuoi capelli.</p>
-            <div class="about-buttons">
-                <a href="https://book.plandok.com/it/hair-chic-nhupai" class="btn btn-gold" target="_blank" rel="noopener noreferrer">PRENOTA ORA ↗</a>
-                <a href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20avere%20informazioni." class="btn btn-outline" target="_blank" rel="noopener noreferrer">Contattaci</a>
-            </div>
-        </div>
+      <div class="about-visual reveal">
+        <div class="about-image" role="img" aria-label="Fotografia illustrativa di styling e cura dei capelli"></div>
+        <div class="about-frame"></div>
+        <div class="about-caption"><strong>Il tuo momento.</strong><span>Hair Chic · Roma</span></div>
+      </div>
+      <div class="about-copy reveal">
+        <span class="eyebrow">Il mondo Hair Chic</span>
+        <h2>Più attenzione.<br><em>Più personalità.</em></h2>
+        <p>Ogni persona ha il proprio stile. Per questo, scegliere il prossimo look dovrebbe partire da ciò che desideri e da come vuoi sentirti.</p>
+        <p>Hair Chic ti aspetta a Roma, in Via Emanuele Filiberto 24. Contatta il salone per conoscere i servizi disponibili e organizzare il tuo prossimo appuntamento.</p>
+        <div class="about-rule"></div>
+        <a class="btn btn-gold" href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer">SCOPRI LE DISPONIBILITÀ <span aria-hidden="true">↗</span></a>
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="gallery" id="galleria">
+  <section class="section gallery" id="galleria">
     <div class="container">
-        <div class="section-title"><small>Hair Chic</small><h2>Il nostro mondo.</h2><p>Un ambiente elegante e contemporaneo, pensato per dedicarti tempo e attenzione.</p></div>
-        <div class="gallery-grid">
-            <div class="gallery-item large"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1200&q=85" alt="Ambiente di un salone per capelli" loading="lazy"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1527799820374-dcf8f9d4a388?auto=format&fit=crop&w=900&q=85" alt="Hair styling" loading="lazy"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85" alt="Parrucchiere al lavoro" loading="lazy"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=900&q=85" alt="Interni di un salone" loading="lazy"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=85" alt="Look e bellezza dei capelli" loading="lazy"></div>
-        </div>
+      <div class="section-heading reveal">
+        <span class="eyebrow">Ispirazione e stile</span>
+        <h2>Il nostro <span>mondo.</span></h2>
+        <p>Un percorso visivo dedicato alla bellezza e alla cura dei capelli. Seleziona una fotografia per ingrandirla.</p>
+      </div>
+      <div class="gallery-grid reveal">
+        <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci fotografia di un salone">
+          <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1000&q=85" alt="Ambiente di hairstyling" loading="lazy">
+        </button>
+        <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1527799820374-dcf8f9d4a388?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci fotografia di hair styling">
+          <img src="https://images.unsplash.com/photo-1527799820374-dcf8f9d4a388?auto=format&fit=crop&w=850&q=85" alt="Ispirazione per capelli e styling" loading="lazy">
+        </button>
+        <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci fotografia di styling">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=850&q=85" alt="Lavoro di hairstyling" loading="lazy">
+        </button>
+        <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci fotografia di un ambiente beauty">
+          <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=850&q=85" alt="Ispirazione per un ambiente beauty" loading="lazy">
+        </button>
+        <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci fotografia beauty">
+          <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=850&q=85" alt="Ritratto beauty e ispirazione per il look" loading="lazy">
+        </button>
+      </div>
+      <p class="gallery-note">Immagini illustrative: sostituibili con fotografie reali del salone e dei suoi lavori.</p>
     </div>
-</section>
+  </section>
 
-<section class="reviews" id="recensioni">
+  <section class="section reviews" id="recensioni">
     <div class="container">
-        <div class="section-title"><small>Dicono di noi</small><h2>Le vostre parole.</h2></div>
-        <div class="reviews-wrapper">
-            <div class="review-card"><div class="stars" aria-label="5 stelle">★★★★★</div><p>"Mi sono trovata benissimo. Patrizio è molto professionale, disponibile e attento alle esigenze del cliente. Ambiente pulito e accogliente."</p><div class="review-author">Ida De Cresce</div></div>
-            <div class="review-card"><div class="stars" aria-label="5 stelle">★★★★★</div><p>"Professionalità, gentilezza e grande attenzione al cliente. Un posto dove tornare sicuramente."</p><div class="review-author">Alessandro Berti</div></div>
-            <div class="review-card"><div class="stars" aria-label="5 stelle">★★★★★</div><p>"Personale gentile e disponibile. Mi sono sentita subito a mio agio e sono rimasta molto soddisfatta del risultato."</p><div class="review-author">Sofia Liu</div></div>
-            <div class="review-card"><div class="stars" aria-label="5 stelle">★★★★★</div><p>"Un servizio curato e professionale. Grande attenzione ai dettagli e ottimo risultato finale."</p><div class="review-author">Alex Alex</div></div>
-            <div class="review-card"><div class="stars" aria-label="5 stelle">★★★★★</div><p>"Ambiente molto piacevole, personale competente e sempre disponibile. Consigliatissimo."</p><div class="review-author">Patrizia Scarlett Pelliccioni</div></div>
-            <div class="review-card"><div class="stars" aria-label="5 stelle">★★★★★</div><p>"Professionalità e cortesia. Sono rimasto molto soddisfatto del servizio e tornerò sicuramente."</p><div class="review-author">Marco Di Pietro</div></div>
-        </div>
+      <div class="section-heading reveal">
+        <span class="eyebrow">Le esperienze dei clienti</span>
+        <h2>Le vostre <span>parole.</span></h2>
+        <p>Uno spazio dedicato alle recensioni autentiche dei clienti di Hair Chic.</p>
+      </div>
+      <div class="reviews-grid">
+        <article class="review-card reveal">
+          <div class="review-stars" aria-label="Cinque stelle">★★★★★</div>
+          <blockquote>“Mi sono trovata benissimo. Patrizio è molto professionale, disponibile e attento alle esigenze del cliente. Ambiente pulito e accogliente.”</blockquote>
+          <div class="review-author">Ida De Cresce</div>
+        </article>
+        <article class="review-card reveal">
+          <div class="review-stars" aria-label="Cinque stelle">★★★★★</div>
+          <blockquote>“Professionalità, gentilezza e grande attenzione al cliente. Un posto dove tornare sicuramente.”</blockquote>
+          <div class="review-author">Alessandro Berti</div>
+        </article>
+        <article class="review-card reveal">
+          <div class="review-stars" aria-label="Cinque stelle">★★★★★</div>
+          <blockquote>“Personale gentile e disponibile. Mi sono sentita subito a mio agio e sono rimasta molto soddisfatta del risultato.”</blockquote>
+          <div class="review-author">Sofia Liu</div>
+        </article>
+      </div>
+      <p class="review-disclaimer">Prima della pubblicazione definitiva, verificare con il salone l'autenticità, il testo e l'autorizzazione all'utilizzo di ogni recensione.</p>
     </div>
-</section>
+  </section>
 
-<section class="contact" id="contatti">
+  <section class="section contact" id="contatti">
     <div class="container contact-grid">
-        <div class="contact-info">
-            <small style="color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:12px">Vieni a trovarci</small>
-            <h2>Parliamo<br>del tuo look.</h2>
-            <p>Per informazioni, disponibilità o per conoscere meglio i nostri servizi, contattaci direttamente.</p>
-            <div class="contact-details">
-                <div class="contact-detail"><strong>Indirizzo</strong><span>Via Emanuele Filiberto 24, Roma</span></div>
-                <div class="contact-detail"><strong>Telefono</strong><a href="tel:+390697276248">06 9727 6248</a></div>
-                <div class="contact-detail"><strong>WhatsApp</strong><a href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20avere%20informazioni%20per%20un%20appuntamento." target="_blank" rel="noopener noreferrer">Scrivici su WhatsApp</a></div>
-                <div class="contact-detail"><strong>Orari</strong><span>Lunedì – Sabato: 09:00 – 19:00<br>Domenica: Chiuso</span></div>
-            </div>
-            <div class="contact-actions">
-                <a href="https://book.plandok.com/it/hair-chic-nhupai" class="btn btn-gold" target="_blank" rel="noopener noreferrer">PRENOTA ORA ↗</a>
-                <a href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20avere%20informazioni%20per%20un%20appuntamento." class="btn btn-outline" target="_blank" rel="noopener noreferrer">Scrivici su WhatsApp</a>
-            </div>
+      <div class="contact-copy reveal">
+        <span class="eyebrow">Vieni a trovarci</span>
+        <h2>Il prossimo look<br><em>inizia qui.</em></h2>
+        <p class="contact-intro">Per informazioni sui servizi, sugli orari e sugli appuntamenti, contatta direttamente Hair Chic.</p>
+        <div class="contact-list">
+          <div class="contact-item">
+            <span class="contact-icon" aria-hidden="true">⌖</span>
+            <div><strong>Indirizzo</strong><p>Via Emanuele Filiberto 24, Roma</p></div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon" aria-hidden="true">☎</span>
+            <div><strong>Telefono</strong><a href="tel:+390697276248">06 9727 6248</a></div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon" aria-hidden="true">↗</span>
+            <div><strong>WhatsApp</strong><a href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20avere%20informazioni%20per%20un%20appuntamento." target="_blank" rel="noopener noreferrer">Scrivi un messaggio</a></div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon" aria-hidden="true">◷</span>
+            <div><strong>Orari indicativi</strong><p>Lunedì – Sabato: 09:00 – 19:00<br>Domenica: chiuso</p></div>
+          </div>
         </div>
-        <div class="contact-map">
-            <iframe src="https://www.google.com/maps?q=Via%20Emanuele%20Filiberto%2024%2C%20Roma&output=embed" title="Mappa per raggiungere Hair Chic a Roma" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="contact-buttons">
+          <a class="btn btn-gold" href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer">PRENOTA ONLINE <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-outline" href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20avere%20informazioni." target="_blank" rel="noopener noreferrer">CONTATTACI</a>
         </div>
+      </div>
+      <div class="map-wrap reveal">
+        <iframe src="https://www.google.com/maps?q=Via%20Emanuele%20Filiberto%2024%2C%20Roma&output=embed" title="Mappa per raggiungere Hair Chic, Via Emanuele Filiberto 24 a Roma" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
     </div>
-</section>
+  </section>
+
+  <section class="final-cta">
+    <div class="container final-cta-inner">
+      <div>
+        <h2>Prenditi un momento per te.</h2>
+        <p>Contatta Hair Chic o consulta il sistema di prenotazione online.</p>
+      </div>
+      <a class="btn" href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer">PRENOTA ORA <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
 </main>
 
 <footer>
-    <div class="container">
-        <div class="footer-grid">
-            <div><div class="footer-logo">Hair <span>Chic</span></div><p style="margin-top:15px;max-width:380px">Parrucchiere a Roma. Professionalità, cura e stile nel cuore della città.</p></div>
-            <div><h4>Contatti</h4><p>Via Emanuele Filiberto 24<br>Roma</p><p style="margin-top:10px"><a href="tel:+390697276248">06 9727 6248</a></p><p style="margin-top:10px"><a href="https://wa.me/390697276248" target="_blank" rel="noopener noreferrer">WhatsApp</a></p></div>
-            <div><h4>Orari</h4><p>Lunedì – Sabato<br>09:00 – 19:00</p><p style="margin-top:10px">Domenica: Chiuso</p><p style="margin-top:15px"><a href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer">Prenota online ↗</a></p></div>
-        </div>
-        <div class="footer-bottom">© 2026 Hair Chic Roma — Tutti i diritti riservati.</div>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Hair <span>Chic</span></div>
+        <p class="footer-description">Hair Chic Roma. Scopri i servizi, contatta il salone e organizza il tuo prossimo appuntamento.</p>
+      </div>
+      <div>
+        <h3>Contatti</h3>
+        <p>Via Emanuele Filiberto 24<br>Roma</p>
+        <p><a href="tel:+390697276248">06 9727 6248</a></p>
+        <p><a href="https://wa.me/390697276248" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></p>
+      </div>
+      <div>
+        <h3>Esplora</h3>
+        <p><a href="#servizi">Servizi</a></p>
+        <p><a href="#galleria">Galleria</a></p>
+        <p><a href="#contatti">Contatti e mappa</a></p>
+        <p><a href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer">Prenota online ↗</a></p>
+      </div>
     </div>
+    <div class="footer-bottom">
+      <span>© <span id="currentYear">2026</span> Hair Chic Roma.</span>
+      <span>Demo grafica da sottoporre all'approvazione del salone.</span>
+    </div>
+  </div>
 </footer>
 
-<!-- PULSANTE PRENOTA SEMPRE VISIBILE -->
-<a href="https://book.plandok.com/it/hair-chic-nhupai" class="booking-fixed" target="_blank" rel="noopener noreferrer" aria-label="Prenota un appuntamento online">PRENOTA ORA ↗</a>
+<a class="floating-booking" href="https://book.plandok.com/it/hair-chic-nhupai" target="_blank" rel="noopener noreferrer" aria-label="Prenota un appuntamento online">PRENOTA ORA ↗</a>
+<a class="whatsapp-float" href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20avere%20informazioni%20per%20un%20appuntamento." target="_blank" rel="noopener noreferrer" aria-label="Contatta Hair Chic su WhatsApp">☎</a>
 
-<!-- PULSANTE WHATSAPP SEMPRE VISIBILE -->
-<a href="https://wa.me/390697276248?text=Ciao%20Hair%20Chic%2C%20vorrei%20avere%20informazioni%20per%20un%20appuntamento." class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contatta Hair Chic su WhatsApp">☎</a>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Immagine ingrandita">
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Chiudi immagine">×</button>
+  <img id="lightboxImage" src="" alt="Fotografia ingrandita della galleria">
+</div>
 
 <script>
-function toggleMenu() {
-    const nav = document.getElementById("navLinks");
-    const toggle = document.getElementById("menuToggle");
-    const isOpen = nav.classList.toggle("active");
-    toggle.setAttribute("aria-expanded", String(isOpen));
-}
+(() => {
+  const menuButton = document.getElementById('menuToggle');
+  const nav = document.getElementById('navLinks');
 
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        document.getElementById("navLinks").classList.remove("active");
-        document.getElementById("menuToggle").setAttribute("aria-expanded", "false");
+  function closeMenu() {
+    nav.classList.remove('active');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Apri il menu');
+    menuButton.textContent = '☰';
+    document.body.classList.remove('menu-open');
+  }
+
+  menuButton.addEventListener('click', () => {
+    const open = !nav.classList.contains('active');
+    if (open) {
+      nav.classList.add('active');
+      menuButton.setAttribute('aria-expanded', 'true');
+      menuButton.setAttribute('aria-label', 'Chiudi il menu');
+      menuButton.textContent = '×';
+      document.body.classList.add('menu-open');
+    } else {
+      closeMenu();
+    }
+  });
+
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      closeMenu();
+      closeLightbox();
+    }
+  });
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const lightboxClose = document.getElementById('lightboxClose');
+  let previousFocus = null;
+
+  function openLightbox(src, alt) {
+    previousFocus = document.activeElement;
+    lightboxImage.src = src;
+    lightboxImage.alt = alt || 'Fotografia ingrandita';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lightboxClose.focus();
+  }
+
+  function closeLightbox() {
+    if (!lightbox.classList.contains('open')) return;
+    lightbox.classList.remove('open');
+    lightboxImage.src = '';
+    document.body.style.overflow = '';
+    if (previousFocus) previousFocus.focus();
+  }
+
+  document.querySelectorAll('.gallery-item').forEach(button => {
+    button.addEventListener('click', () => {
+      const image = button.querySelector('img');
+      openLightbox(button.dataset.full, image ? image.alt : '');
     });
-});
-</script>
+  });
 
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', event => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealItems = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach(item => observer.observe(item));
+  } else {
+    revealItems.forEach(item => item.classList.add('visible'));
+  }
+
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+})();
+</script>
 </body>
 </html>
